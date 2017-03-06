@@ -8,8 +8,9 @@ A script to run the R script simple.R as an example of submitting a R script usi
 
 Output will be captured in the slurm output file
 
+```
 sbatch -A account_name run_simple.sl
-
+```
 
 #### run_print-args.sl
 
@@ -17,8 +18,9 @@ A script to demonstrate passing in commandline arguments to an Rscript as part s
 
 Output will be captured in the slurm output file
 
+```
 sbatch -A account_name run_print-args.sl first second third
-
+```
 
 
 

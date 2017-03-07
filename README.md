@@ -37,7 +37,9 @@ sbatch -A account_name run_print-args.sl first second third
 
 #### run_array-analysis
 
-A script to calculate the mean by patient for each csv file in parallel using a slurm array job
+A script to demonstrate using a slurm array job to run an analysis in parallel on different input datasets
+
+Output will be captured in the slurm output file
 
 ```
 sbatch -A account_name run_array-analysis.sl

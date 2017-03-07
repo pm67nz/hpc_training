@@ -35,6 +35,12 @@ sbatch -A account_name run_print-args.sl first second third
 ```
 
 
+#### run_array-analysis
 
+A script to calculate the mean by patient for each csv file in parallel using a slurm array job
+
+```
+sbatch -A account_name run_array-analysis.sl
+```
 
 

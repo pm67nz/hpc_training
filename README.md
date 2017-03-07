@@ -2,6 +2,18 @@
 Scripts for NeSI HPC training workshop
 
 
+Download the code using
+```
+git clone https://github.com/murraycadzow/hpc_training.git
+cd hpc_training
+```
+
+Download the example data by running
+```
+bash get_data.sh
+```
+
+
 #### run_simple.sl
 
 A script to run the R script simple.R as an example of submitting a R script using slurm

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J simple.R
+#SBATCH -J print-args.R
 #SBATCH -A account_name # Account name
 #SBATCH --time=5:00     # Walltime
 #SBATCH --mem=512  # memory/node (in MB)

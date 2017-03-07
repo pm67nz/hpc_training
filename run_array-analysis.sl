@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J arrayJob
+#SBATCH -J array-analysis.R
 #SBATCH -A account_name # Account name
 #SBATCH --time=5:00     # Walltime
 #SBATCH --mem=512  # memory/node (in MB)

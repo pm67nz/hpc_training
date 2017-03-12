@@ -26,7 +26,7 @@ Training materials for a hands-on workshop on introduction to HPC using NeSI, in
 
 (Possibly beyond the scope of the workshop due to time limitations but useful to achieve)
 * Know how to get installed software that is not currently available on the cluster
-  
+* (Otago users) Know what the Otago High Capacity Storage (HCS) and high speed data transfer services are, and how to apply for access  
 
 ## Getting started
 

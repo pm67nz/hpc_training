@@ -18,7 +18,7 @@ Training materials for a hands-on workshop on introduction to HPC using NeSI, in
 * Understand (roughly) what Message Parsing Interface is for and become familar with its basic use.
 * Understand what queuing system is and become aware of the impact of submitting jobs to different typse of queues.
 * Be able to submit a job on a NeSI cluster (Pan) - based on the provided example using R scripts.
-* Understand the avdantages of using parallelism computational work, and deploy it in the case of embarrasinly prallel jobs (by modifying SLURM script). Possibly be able to evaluate if the problem is embarrasingly parallel.
+* Understand the advantages of using parallelism computational work, and deploy it in the case of embarrassingly parallel jobs (by modifying SLURM script). Possibly be able to evaluate if the problem is embarrasingly parallel.
 * Be able to monitor the job state and execution.
 * Know how to access the output of the job and download locally files with output data.
 * Know the best practices for cleaning up their work environment on the cluster.
@@ -27,6 +27,10 @@ Training materials for a hands-on workshop on introduction to HPC using NeSI, in
 (Possibly beyond the scope of the workshop due to time limitations but useful to achieve)
 * Know how to get installed software that is not currently available on the cluster
   
+
+## Getting started
+
+Once logged into the cluster
 
 Download the code using
 ```

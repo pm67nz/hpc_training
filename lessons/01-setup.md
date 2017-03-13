@@ -9,7 +9,7 @@ Please see: [NeSI website](https://www.nesi.org.nz/apply) for more details.
 Once you have your account (and know your username and password), you will be able to log in. Open the terminal on your machine (for more info see below) and type in:
 
 ```
-ssh your_username@@login.uoa.nesi.org.nz
+ssh your_username@login.uoa.nesi.org.nz
 ```
 
 See detailed [login instructions using MobaXTerm on Windows](https://wiki.auckland.ac.nz/display/CER/FromZeroToHero) (note that these instructions may include some details which are available if you are at the Auckland University campus). If you are using Linux, Mac OS or maybe a Unix system, you will be able to log in using a standard terminal.

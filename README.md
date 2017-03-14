@@ -40,9 +40,12 @@ git clone https://github.com/murraycadzow/hpc_training.git
 cd hpc_training
 ```
 
-Download the example data by running
+All SLURM scripts are found in code/SLURM/ and all R scripts are found in code/R/
+
+
+Navigate to code/SLURM/
 ```
-bash get_data.sh
+cd code/SLURM/
 ```
 
 

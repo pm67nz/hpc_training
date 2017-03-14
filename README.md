@@ -2,13 +2,13 @@
 
 Training materials for a hands-on workshop on introduction to HPC using NeSI, including scripts for NeSI HPC training workshop. The materials are largely based on the content created by the University of Otago staff, New Zealand eScience Infrastructure staff and Centre for eResearh at the University of Auckland.
 
-####Contributors:
+#### Contributors:
 
 Murray Cadzow, Matthew Healey, Gene Soudlenkov, Sung Bae, Benjamin Roberts,  Bart Verleye, Jordi Blasco, Martin Feller, Peter Maxwell, Sina Masoud-Ansari, Aleksandra Pawlik
 (if you are contributing to the materials, please add your name to the list)
 
 
-##Learning objectives (what you will know after this workshop):
+## Learning objectives (what you will know after this workshop):
 
 * Learn how to log in on NeSI clusters (Pan) and navigate your  way thorough the environment set up on the login node.
 * Know how to transfer (small to medium-sized) data files and scripts to the cluster via: scp or MobaXterm. 

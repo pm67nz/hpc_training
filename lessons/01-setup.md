@@ -56,6 +56,17 @@ During our workshop we will use some R scripts, some SLURM scripts and some samp
 Let's start first with changing to your project directory (as you want to keep all the above files well organised within the project directory).
 
 ```
-ls /projects/your_project_name
+cd /projects/your_project_name
 ```
 
+Pull down all training material, including the dataset from our training GitHub repository:
+
+```
+git clone https://github.com/murraycadzow/hpc_training
+```
+
+And navigate into the directory that was created
+
+```
+cd hpc_training
+```

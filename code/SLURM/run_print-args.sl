@@ -12,4 +12,4 @@
 # load in the R module
 module load R/3.3.0-intel-2015a 
 
-srun Rscript print-args.R $@ 
+srun Rscript ../R/print-args.R $@ 

@@ -19,4 +19,4 @@ file_num=$(printf '%.2d' $SLURM_ARRAY_TASK_ID)
 # load in the R module
 module load R/3.3.0-intel-2015a 
 
-srun Rscript array-analysis.R data/inflammation-${file_num}.csv 
+srun Rscript ../R/array-analysis.R ../data/inflammation-${file_num}.csv 

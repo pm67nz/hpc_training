@@ -1,8 +1,8 @@
-##Working within NeSI HPC environment
+## Working within NeSI HPC environment
 
 NeSI clusters are a shared resource and hence there are certain rules as to what is available to each user by default. For small-scale projects the default amount of resources should be sufficient. If you need more compute power or disk allocation for your data, please contact support@nesi.org.nz.
 
-###Quota
+### Quota
 
 On the NeSI Pan cluster the basic quota rules are (in brief summary):
 
@@ -25,7 +25,7 @@ To check your allocated disk space and file count quotas use:
 fs_my_quota_usage
 ```
 
-###Login vs build vs compute nodes
+### Login vs build vs compute nodes
 
 A typical cluster consists of several "parts". To simplyfy things we will briefly describe the three types of nodes that are usually available.
  In order to efficiently use HPC resources for your research, you do not need to know a lot of detail about the HPC architecture but you need to have a basic understanding of what you can use each type of node for.
@@ -52,6 +52,6 @@ A typical cluster consists of several "parts". To simplyfy things we will briefl
 - This is where your jobs actually run.
 - Usually you don't have to worry about working with the compute nodes as a user
 
-###Available software
+### Available software
 
-###Modules
+### Modules

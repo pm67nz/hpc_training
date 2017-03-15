@@ -65,8 +65,8 @@ Pull down all training material, including the dataset from our training GitHub 
 git clone https://github.com/murraycadzow/hpc_training
 ```
 
-And navigate into the directory that was created
+And navigate into the directory that was created, directly to where our SLURM scripts are
 
 ```
-cd hpc_training
+cd hpc_training/code/SLURM
 ```

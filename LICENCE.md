@@ -1,4 +1,5 @@
 
+
 [this license is based on the Software and Data Carpentry licensing information]
 
 ## Instructional Material
@@ -47,10 +48,13 @@ Notices:
   rights such as publicity, privacy, or moral rights may limit how you
   use the material.
 
+
 ## Software
 
 Except where otherwise noted, the example programs and other software
+
 provided by in this training material are made available under the
+
 [OSI][osi]-approved
 [MIT license][mit-license].
 
@@ -75,11 +79,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 
+
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 [cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
 [mit-license]: http://opensource.org/licenses/mit-license.html
 [osi]: http://opensource.org
-
-
-
 

@@ -4,6 +4,8 @@ NeSI Documentation for running a job: https://support.nesi.org.nz/hc/en-gb/artic
 
 Adapted from Jordi Blasco's [Introduction to SLURM documentation](https://wiki.auckland.ac.nz/download/attachments/63145549/introduction-slurm.pdf?api=v2)
 
+SLURM is the software used on the NeSI Pan cluster for managing and allocating the cluster resources when you submit a job. To run a job on the cluster, first you have to tell SLURM the requirements so that it can best allocate resources for all users over the entire cluster.
+
 ## About SLURM
 
 - SLURM was an acronym for Simple Linux Utility for Resrouce Management

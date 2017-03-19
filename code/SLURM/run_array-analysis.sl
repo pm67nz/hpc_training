@@ -4,6 +4,9 @@
 #SBATCH --time=5:00     # Walltime
 #SBATCH --mem=512  # memory/node (in MB)
 #SBATCH --array=1-5 # size of the array
+#SBATCH --reservation=workshop
+
+
 
 # example usage:
 # sbatch -A <account_name> --array=1-5 run_array-analysis.sl

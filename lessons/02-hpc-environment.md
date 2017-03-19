@@ -17,7 +17,7 @@ On the NeSI Pan cluster the basic quota rules are (in brief summary):
 
 * An increase in disk quota or inode quota can be given either until a specific date (provided the project keeps going until that date), or until the end of the project. Especially in the latter case, we may have to reduce your disk quota if we face operational constraints.
 
-[See more details](https://wiki.auckland.ac.nz/display/CER/Projects+and+quota)
+[See more details about the quota for the Pan cluster](https://wiki.auckland.ac.nz/display/CER/Projects+and+quota)
 
 To check your allocated disk space and file count quotas use:
 
@@ -38,20 +38,44 @@ A typical cluster consists of several "parts". To simplyfy things we will briefl
 - You upload your data and the code to the login node
 - You download the results from the login node
 - You submit the jobs from the login node
-- IMPORTANT: **Login nodes should never be used to: build and test your code, store large data files, store data permanently/long-term **
-- 
 
-* **Building or Development Node**
+
+IMPORTANT: **Login nodes should never be used to: build and test your code, store large data files, store data permanently/long-term**
+
+What does that actually mean?
+
+* When on login node you should only submit jobs (aka run code) using the job scheduler. If you want to work intearactively (for example, running your code directly), you should do that drom the build node (see below).
+* You should not try to edit large (probably more than 1GB) files when on the login node using standard editors (like Vim or Nano). If you need to preview a file, use `less` command.
+* You should not compress a large file with gzip.
+
+
+* **Build or Development Node**
 
 - Used for building (compiling) your code
 - Used for test runs for your code
 - [More details on building your code on the Pan cluster](https://wiki.auckland.ac.nz/display/CER/Developing+software)
+- Pan has two build nodes:
+    -  build-wm   (Intel Westmere, NVIDIA Fermi)
+    -  build-sb (Intel Sandy Bridge, NVIDIA Kepler)
+
+To connect from the login node to a build node:
+
+```
+ssh -YC  build-wm
+```
+
+The -Y option makes X forwarding. This mean that any GUI applications running on the cluster can have windows output on your screen. It should be enabled by default if you are connecting to HPC from Linux. If you are on a Mac, you may need to install an X server (for example, [XQuartz](http://xquartz.macosforge.org/landing/)) 
 
 * **Compute Node**
 
 - This is where your jobs actually run.
 - Usually you don't have to worry about working with the compute nodes as a user
 
+
 ### Available software
+
+You can use a variety of software already installed on the cluster. 
+
+
 
 ### Modules

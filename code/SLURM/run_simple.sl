@@ -3,7 +3,7 @@
 #SBATCH -A account_name #account name
 #SBATCH --time=01:00     # Walltime
 #SBATCH --mem=512  # memory/node (in MB)
-
+#SBATCH --reservation=workshop
 
 # example usage:
 # sbatch -A <account_name> run_simple.sl

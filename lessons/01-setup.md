@@ -73,6 +73,12 @@ scp <path_to_files> your_username@login.uoa.nesi.org.nz:<destination_path>
 
 ``` 
 
+To specify you ssh key use:
+
+```
+scp -i ~/.ssh/pan_rsa_key <path_to_files> your_username@login.uoa.nesi.org.nz:<destination_path>
+```
+
 You need to replace the <path_to_files> and <destination_path> with the correct path to your file and then to the desination on the cluster. So for example:
 
 ```

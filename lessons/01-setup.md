@@ -53,20 +53,30 @@ In order to use HPC resources (not only those provided by NeSI), you will almost
 
 During our workshop we will use some R scripts, some SLURM scripts and some sample data.
 
-Let's start first with changing to your project directory (as you want to keep all the above files well organised within the project directory).
+Let's start first with downloading the workshop materials. You can download all materials from the [GitHub repository as a zip file](https://github.com/murraycadzow/hpc_training/archive/master.zip). Save this zip file on your laptop/deskop in a preferred location.
+
+Once you finished downloading, unzip the file. You will see three subfolders:
+* `data`
+* `lessons`
+* `code`
+
+
+Now we will transfer some of the files from these subfolders onto the cluster. We will show you two ways of doing it:
+
+**1)** If you are working on Windows using MobaXterm, [you can use the drang'n'drop user interface which MobaXterm offers](https://wiki.auckland.ac.nz/display/CER/FromZeroToHero)
+**2)** You can use the command line built-in programme `scp` (*secure copy*). It should work on standard Mac and Linux operating systems (in the built-in terminal). It will also work in the MobaXTerm command line on Windows.
+
+To use `scp` to copy the file from your local machine type in the terminal on your local machine (so not on the cluster!):
 
 ```
-cd /projects/your_project_name
-```
+scp <path_to_files> your_username@login.uoa.nesi.org.nz:<destination_path>
 
-Pull down all training material, including the dataset from our training GitHub repository:
+``` 
 
-```
-git clone https://github.com/murraycadzow/hpc_training
-```
-
-And navigate into the directory that was created, directly to where our SLURM scripts are
+You need to replace the <path_to_files> and <destination_path> with the correct path to your file and then to the desination on the cluster. So for example:
 
 ```
-cd hpc_training/code/SLURM
+scp data/inflammation-01.csv  apaw363@login.uoa.nesi.org.nz:/home/apaw363/
 ```
+
+If you set up the SSH keys correctly, then the file transfer should go through.  

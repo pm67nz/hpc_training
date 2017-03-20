@@ -6,6 +6,7 @@
 #SBATCH --reservation=workshop
 
 
+
 # example usage:
 # sbatch -A <account_name> run_array-analysis.sl ../data/inflammation-01.csv
 

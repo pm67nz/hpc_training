@@ -73,7 +73,7 @@ scp <path_to_files> your_username@login.uoa.nesi.org.nz:<destination_path>
 
 ``` 
 
-To specify you ssh key use:
+To specify the ssh key, use:
 
 ```
 scp -i ~/.ssh/pan_rsa_key <path_to_files> your_username@login.uoa.nesi.org.nz:<destination_path>
@@ -86,3 +86,16 @@ scp data/inflammation-01.csv  apaw363@login.uoa.nesi.org.nz:/home/apaw363/
 ```
 
 If you set up the SSH keys correctly, then the file transfer should go through.  
+
+
+To transfer files to your local machine:
+
+```
+scp -i ~/.ssh/pan_rsa_key your_username@login.uoa.nesi.org.nz:<path_to_file_on_nesi> <local_destination_path>
+```
+
+A directory can also be transferred by using the -r flag for recursive
+
+```
+scp -r -i ~/.ssh/pan_rsa_key <path_to_directory> your_username@login.uoa.nesi.org.nz:<destination_path>
+```

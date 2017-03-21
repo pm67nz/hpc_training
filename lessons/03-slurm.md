@@ -36,6 +36,23 @@ Jobs
 - suspended/preempted
 - cancelled/completed/failed
 
+## Queues
+
+On the NeSI Pan cluster there is a queuing system that assigns priority to jobs based on:
+
+- Project type (decided upon at time of project application)
+  - merit
+  - institution
+  - proposal development
+  - postgraduate
+
+- Wall time (specified at job runtime)
+  - high ( under 6 hours)
+  - medium ( over 6 hours but less than 24 hours)
+  - low (longer than 24 hours)
+ 
+Other considerations made by the queue are the number of jobs previously run by the user, and how long the job as spent in the queue
+
 ## Running a job
 
 ### SLURM Commands

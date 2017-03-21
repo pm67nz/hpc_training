@@ -56,7 +56,7 @@ A script to run the R script simple.R as an example of submitting a R script usi
 Output will be captured in the slurm output file
 
 ```
-sbatch -A account_name run_simple.sl
+sbatch -A project_code run_simple.sl
 ```
 
 #### run_print-args.sl
@@ -66,7 +66,7 @@ A script to demonstrate passing in commandline arguments to an Rscript as part s
 Output will be captured in the slurm output file
 
 ```
-sbatch -A account_name run_print-args.sl first second third
+sbatch -A project_code run_print-args.sl first second third
 ```
 
 
@@ -77,7 +77,7 @@ A script to demonstrate using a slurm array job to run an analysis in parallel o
 Output will be captured in the slurm output file
 
 ```
-sbatch -A account_name run_array-analysis.sl
+sbatch -A project_code run_array-analysis.sl
 ```
 
 

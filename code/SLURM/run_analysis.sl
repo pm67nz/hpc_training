@@ -8,7 +8,7 @@
 
 
 # example usage:
-# sbatch -A nesi99999 run_array-analysis.sl ../data/inflammation-01.csv
+# sbatch -A nesi99999 run_array-analysis.sl ../../data/inflammation-01.csv
 
 
 

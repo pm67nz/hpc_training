@@ -72,6 +72,30 @@ The -Y option makes X forwarding. This mean that any GUI applications running on
 - Usually you don't have to worry about working with the compute nodes as a user
 
 
+### Your projects and allocation
+
+There are several ways to check which projects you have access to. The simplest way is:
+
+```
+show_my_projects
+```
+
+You can do that using the `id` command. The output may be for example:
+
+```
+uid=6157(apaw363) gid=5000(nesi) groups=5000(nesi),6075(nesi00357) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+```
+
+To check how much allocation you have used so far:
+
+```
+fs_my_quota_usage
+```
+
+
+
+
+
 ### Available software
 
 You can use a variety of software already installed on the cluster. 
@@ -79,3 +103,5 @@ You can use a variety of software already installed on the cluster.
 
 
 ### Modules
+
+

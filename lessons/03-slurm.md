@@ -90,3 +90,22 @@ Other considerations made by the queue are the number of jobs previously run by 
 ```
 
 
+
+### Examples of submitting jobs
+
+Let's submit a first job via SLURM. We will do it using the `sbatch` command to interact with SLURM. Remember to replace [Project Account] with the actual project ID that you want to use.
+
+```
+sbatch -A [Project Account] -t 10 --wrap "echo hello world"
+
+```
+
+The options `-t` stands for *time* and sets a limit on the total run time of the job allocation. Note that each partition on which the jobs are run has its own time limit. If the set time limit exceeds the limit for the partition, the job will become "PENDING" (for more information on job statuses, see below).
+`--wrap` option means that the following string (in "") will be turned by SLURM in a simple shell script. 
+
+
+
+
+
+
+

@@ -99,3 +99,12 @@ A directory can also be transferred by using the -r flag for recursive
 ```
 scp -r -i ~/.ssh/pan_rsa_key <path_to_directory> your_username@login.uoa.nesi.org.nz:<destination_path>
 ```
+
+For example:
+
+```
+scp -r -i ~/.ssh/pan_rsa_key /home/username_on_local_machine/Desktop/python-novice-inflammation-data/ your_username@login.uoa.nesi.org.nz:/home/your_username
+
+```
+
+

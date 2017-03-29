@@ -4,7 +4,7 @@ Training materials for a hands-on workshop on introduction to HPC using NeSI, in
 
 #### Contributors:
 
-Murray Cadzow, Matthew Healey, Gene Soudlenkov, Sung Bae, Benjamin Roberts,  Bart Verleye, Jordi Blasco, Martin Feller, Peter Maxwell, Sina Masoud-Ansari, Danny Baillie, Tom Kelly Aleksandra Pawlik
+Murray Cadzow, Matthew Healey, Gene Soudlenkov, Sung Bae, Benjamin Roberts,  Bart Verleye, Jordi Blasco, Martin Feller, Peter Maxwell, Sina Masoud-Ansari, Danny Baillie, Tom Kelly, and Aleksandra Pawlik
 (if you are contributing to the materials, please add your name to the list)
 
 

@@ -4,7 +4,7 @@ Training materials for a hands-on workshop on introduction to HPC using NeSI, in
 
 #### Contributors:
 
-Murray Cadzow, Matthew Healey, Gene Soudlenkov, Sung Bae, Benjamin Roberts,  Bart Verleye, Jordi Blasco, Martin Feller, Peter Maxwell, Sina Masoud-Ansari, Aleksandra Pawlik
+Murray Cadzow, Matthew Healey, Gene Soudlenkov, Sung Bae, Benjamin Roberts,  Bart Verleye, Jordi Blasco, Martin Feller, Peter Maxwell, Sina Masoud-Ansari, Danny Baillie, Tom Kelly Aleksandra Pawlik
 (if you are contributing to the materials, please add your name to the list)
 
 
@@ -30,54 +30,17 @@ Murray Cadzow, Matthew Healey, Gene Soudlenkov, Sung Bae, Benjamin Roberts,  Bar
 * Know how to get installed software that is not currently available on the cluster
 * (Otago users) Know what the Otago High Capacity Storage (HCS) and high speed data transfer services are, and how to apply for access  
 
-## Getting started
+## Resources
 
-Once logged into the cluster
+This training material has been developed based on a number of existing resources:
 
-Download the code using
-```
-git clone https://github.com/murraycadzow/hpc_training.git
-cd hpc_training
-```
-
-All SLURM scripts are found in code/SLURM/ and all R scripts are found in code/R/
+* [Pan cluster user wiki - Centre for eResearch at the University of Auckland](https://wiki.auckland.ac.nz/display/CER/Centre+for+eResearch+User+Documentation+Start)
+* [NeSI Support Pages](https://support.nesi.org.nz/hc/en-gb)
+* [Various sets of NeSI training materials](https://github.com/nesi/training)
+* [University of Otago Pan cluster instructions](https://rawgit.com/dannybaillie/NeSI/master/OtagoPanInstructions.html)
 
 
-Navigate to code/SLURM/
-```
-cd code/SLURM/
-```
 
 
-#### run_simple.sl
-
-A script to run the R script simple.R as an example of submitting a R script using slurm
-
-Output will be captured in the slurm output file
-
-```
-sbatch -A project_code run_simple.sl
-```
-
-#### run_print-args.sl
-
-A script to demonstrate passing in commandline arguments to an Rscript as part submitting a slurm job
-
-Output will be captured in the slurm output file
-
-```
-sbatch -A project_code run_print-args.sl first second third
-```
-
-
-#### run_array-analysis
-
-A script to demonstrate using a slurm array job to run an analysis in parallel on different input datasets
-
-Output will be captured in the slurm output file
-
-```
-sbatch -A project_code run_array-analysis.sl
-```
 
 

@@ -104,6 +104,74 @@ The options `-t` stands for *time* and sets a limit on the total run time of the
 `--wrap` option means that the following string (in "") will be turned by SLURM in a simple shell script. 
 
 
+### Monitoring your work on the cluster
+
+We can monitor our job submissions using `squeue` command (which comes with many different options):
+
+```
+squeue -u your_username
+```
+
+And the output will look more or less like this:
+
+```
+   JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+61568899 merit_sho     wrap  apaw363 PD       0:00      1 (Resources)
+61568901 merit_sho     wrap  apaw363 PD       0:00      1 (Resources)
+61568970 merit_sho     wrap  apaw363 PD       0:00      1 (Resources)
+```
+
+Another useful SLURM command is `saccat` which retrieves information about submitted jobs with regards to the accounts. For example:
+
+```
+sacct -j 61568970
+```
+
+Will show us something like:
+
+```
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+61568970           wrap merit_sho+  nesi00357          1  COMPLETED      0:0 
+61568970.ba+      batch             nesi00357          1  COMPLETED      0:0 
+```
+
+
+
+### SLURM scripts
+
+#### run_simple.sl
+
+A script to run the R script simple.R as an example of submitting a R script using slurm
+
+Output will be captured in the slurm output file
+
+```
+sbatch -A project_code run_simple.sl
+```
+
+#### run_print-args.sl
+
+A script to demonstrate passing in commandline arguments to an Rscript as part submitting a slurm job
+
+Output will be captured in the slurm output file
+
+```
+sbatch -A project_code run_print-args.sl first second third
+```
+
+
+#### run_array-analysis
+
+A script to demonstrate using a slurm array job to run an analysis in parallel on different input datasets
+
+Output will be captured in the slurm output file
+
+
+```
+sbatch -A project_code run_array-analysis.sl
+```
+
 
 
 

@@ -60,6 +60,8 @@ Once you finished downloading, unzip the file. You will see three subfolders:
 * `lessons`
 * `code`
 
+All SLURM scripts are found in code/SLURM/ and all R scripts are found in code/R/
+
 
 Now we will transfer some of the files from these subfolders onto the cluster. We will show you two ways of doing it:
 
@@ -107,4 +109,26 @@ scp -r -i ~/.ssh/pan_rsa_key /home/username_on_local_machine/Desktop/python-novi
 
 ```
 
+### Keeing your data in sync with the cluster
+
+(This section is based on the ["High Performance Computing at NYU" materials](https://wikis.nyu.edu/display/NYUHPC/How+to+copy+files+to+and+from+the+HPC+clusters) )
+
+
+`rsync` is a piece of software that allows for not only copying files and directories like `scp` but also preserves the permissions and file modification timestamps.
+
+```
+rsync -av source destination
+```
+
+Options:
+
+* a "Archive" mode - permissions and timestamps of the source are replicated at the destination.
+* v "Verbose".
+* n  "dry run" - don't actually do anything, just indicate what would be done.
+* C "follow CVS ignore conventions" - more on this below.
+
+
+### Transfering large amount of data
+
+NeSI can provide support for transferring large amount of data (1 TB and more) via [Globus](https://www.globus.org/). If your organisation is a member of the Tuakiri Identification system, then the setup for this is fairly straightforward. 
 

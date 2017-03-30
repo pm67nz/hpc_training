@@ -136,6 +136,8 @@ Will show us something like:
 61568970.ba+      batch             nesi00357          1  COMPLETED      0:0 
 ```
 
+### Job outputs
+
 
 
 ### SLURM scripts
@@ -161,6 +163,7 @@ sbatch -A project_code run_print-args.sl first second third
 ```
 
 
+
 #### run_array-analysis
 
 A script to demonstrate using a slurm array job to run an analysis in parallel on different input datasets
@@ -173,7 +176,27 @@ sbatch -A project_code run_array-analysis.sl
 ```
 
 
+```
+sbatch --array=1 -A [project_code] run_array-analysis.sl something.txt
+```
+
+```
+sbatch --array=1-2 -A [project_code] run_array-analysis.sl 
+```
+
+```
+sacct -j [jobid]
+```
 
 
+### Cancelling jobs
+
+```
+scancel [jobid]
+```
+
+```
+
+```
 
 

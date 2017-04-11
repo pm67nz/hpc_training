@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 #SBATCH -J simple.R
 #SBATCH -A project_code # Nesi project code eg nesi99999 or uoo99999
 #SBATCH --time=01:00     # Walltime

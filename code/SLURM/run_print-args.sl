@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 #SBATCH -J print-args.R
 #SBATCH -A project_code # Nesi project code eg nesi99999 or uoo99999
 #SBATCH --time=5:00     # Walltime

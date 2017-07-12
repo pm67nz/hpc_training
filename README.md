@@ -13,7 +13,7 @@ Murray Cadzow, Matthew Healey, Gene Soudlenkov, Sung Bae, Benjamin Roberts,  Bar
 * Learn how to log in on NeSI clusters (Pan) and navigate your  way thorough the environment set up on the login node.
 * Know how to transfer (small to medium-sized) data files and scripts to the cluster via: scp or MobaXterm. 
 * Be able to connect to one of the build/compute nodes.
-* Understand (roughly) the difference between *login* and *build*/*compute* nodes, and how to use them when working on NeSI (or other HPC) infrastructure.
+* Understand (roughly) the difference between *login*, *build*/*development* and *compute* nodes, and how to use them when working on NeSI (or other HPC) infrastructure.
 * Know and understand the default resources allocation (disk quota, use of scratch space, etc), and be aware of possible problems when exceeding the quota, leaving files in scratch space and so on.
 * Understand (roughly) what environment modules are. Be able to view currently loaded modules, list available modules and load the modules you want to use.
 * Know what a job scheduler is for and how to use it (modify a SLURM script, use SLURM commands in the command line mode).

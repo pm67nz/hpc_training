@@ -1,7 +1,7 @@
 # Hands-On 2: Intel Trace Analyzer and Collector
 In this hands-on, we are going to analise the traces collected in the previous hands-on session with Intel Trace Analyzer.
 
-*Estimated time : 15 minutes*
+*Estimated time : 30 minutes*
 
 ## Requirements
 * Cluster account.

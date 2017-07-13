@@ -55,7 +55,7 @@ Move to the folder Cardiac_demo and build the example code with and without inst
 
 ### Non-instrumented
 ```
-cd $HOME/ApplicationTuning2017
+cd $HOME/ApplicationTuning2017/Cardiac_demo
 mkdir build_non-instrumented
 cd build_non-instrumented
 mpiicpc ../heart_demo.cpp ../luo_rudy_1991.cpp ../rcm.cpp ../mesh.cpp -g \

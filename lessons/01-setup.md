@@ -117,7 +117,7 @@ scp -r -i ~/.ssh/pan_rsa_key /home/username_on_local_machine/Desktop/python-novi
 `rsync` is a piece of software that allows for not only copying files and directories like `scp` but also preserves the permissions and file modification timestamps.
 
 ```
-rsync -av source destination
+rsync -e ssh -av source destination
 ```
 
 Options:
@@ -127,6 +127,11 @@ Options:
 * n  "dry run" - don't actually do anything, just indicate what would be done.
 * C "follow CVS ignore conventions" - more on this below.
 
+Example:
+
+```
+rsync -e ssh -av your_username@login.uoa.nesi.org.nz:/home/your_username/folder Downloads/
+```
 
 ### Transfering large amount of data
 

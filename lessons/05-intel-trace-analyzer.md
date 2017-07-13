@@ -30,7 +30,7 @@ cd $HOME/ApplicationTuning2017/OUT/XXXXXX
 traceanalyzer ./heart_demo.single.stf &
 ```
 
-Where ```XXXXXXX``` is the JobID of the jobs which collected the traces
+Where ```XXXXXXX``` is the JobID of the job which collected the traces
 
 Explore the result data analysing:
 * Event Timeline 

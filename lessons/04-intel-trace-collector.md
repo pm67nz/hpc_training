@@ -64,6 +64,7 @@ mpiicpc ../heart_demo.cpp ../luo_rudy_1991.cpp ../rcm.cpp ../mesh.cpp -g \
 
 ### Instrumented
 ```
+cd $HOME/ApplicationTuning2017/Cardiac_demo
 mkdir build_instrumented
 cd build_instrumented
 mpiicpc ../heart_demo.cpp ../luo_rudy_1991.cpp ../rcm.cpp ../mesh.cpp -tcollect -g \

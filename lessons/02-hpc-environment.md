@@ -124,4 +124,4 @@ Syntax :```module [options] sub-command [args ...]```
 * ml foo bar - means: module load foo bar
 * ml -foo -bar baz goo - means: module unload foo bar; module load baz goo;
 
-More information at \url{http://www.tacc.utexas.edu/tacc-projects/lmod}
+More information at http://www.tacc.utexas.edu/tacc-projects/lmod

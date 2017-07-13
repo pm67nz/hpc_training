@@ -38,4 +38,4 @@ Explore the result data analysing:
 * Detect Serialization in Function Profile and Message Profile
 * Compare Original Trace File With Idealized Trace File
 * Message Profile chart
-* Explore Potential issues and suggested section of the code affected
+* Explore Potential issues and suggested sections of the code affected

@@ -101,7 +101,27 @@ fs_my_quota_usage
 You can use a variety of software already installed on the cluster. 
 
 
+### User Environment
+LMOD is very useful to manage environment variables for each application and it is very easy to use. It loads the needed environment by a certain application and its dependencies automatically. The command line is fully compatible with the previous 'Environment Modules', and it provides simple short-cuts and advanced features.
 
-### Modules
+Syntax :```module [options] sub-command [args ...]```
+#### Loading/Unloading sub-commands
+* load | add : load module(s)
+* del | unload: Remove module(s), do not complain if not found
+* purge: unload all modules
+* update: reload all currently loaded modules.
 
+#### Listing / Searching sub-commands
+* list: List loaded modules
+* avail | av: List available modules
+* avail | av string: List available modules that contain "string".
+* spider: List all possible modules
+* spider module" List all possible version of that module file
+* spider string: List all module that contain the "string".
 
+#### Short-cuts
+* ml - means: module list
+* ml foo bar - means: module load foo bar
+* ml -foo -bar baz goo - means: module unload foo bar; module load baz goo;
+
+More information at http://www.tacc.utexas.edu/tacc-projects/lmod

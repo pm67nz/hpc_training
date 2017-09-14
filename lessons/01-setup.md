@@ -14,7 +14,7 @@ ssh your_username@XXX.nesi.org.nz
 
 See detailed [login instructions using MobaXTerm on Windows](https://wiki.auckland.ac.nz/display/CER/FromZeroToHero). If you are using Linux, Mac OS or maybe a Unix system, you will be able to log in using a standard terminal.
 
-If you are using NeSI Pan cluster, your username and some details related to the login steps will vary - [see for details](https://wiki.auckland.ac.nz/display/CER/Access+and+data+transfer).
+On NeSI supercomputers, your username and some details related to the login steps will vary - [see for details](https://wiki.auckland.ac.nz/display/CER/Access+and+data+transfer).
 
 When you execute the line above, you will be asked to input your password and then you should be logged in on the **login node**.
 

@@ -4,7 +4,7 @@ NeSI clusters are a shared resource and hence there are certain rules as to what
 
 ### Quota
 
-On the NeSI Pan cluster the basic quota rules are (in brief summary):
+On the NeSI supercomputers the basic quota rules are (in brief summary):
 
 * Every file, directory or symbolic link takes up either 32 KB of disk space or its actual size (rounded up to the nearest 32K), whichever is bigger.
 

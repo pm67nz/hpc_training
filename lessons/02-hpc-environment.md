@@ -10,14 +10,13 @@ On the NeSI Pan cluster the basic quota rules are (in brief summary):
 
 * Every file, directory or symbolic link counts for one "inode".
 
-* Your home directory has a disk space allotment of 2 GB (though we can give more home directory space in exceptional circumstances).
+* Your home directory has a disk space allotment of XXX GB (though we can give more home directory space in exceptional circumstances).
 
-
-* Each project directory starts off with a space allotment of 30 GB and an inode allotment of 1,000,000 inodes, unless more space is requested (and agreed to by us) at the time the project is created.
+* Each project directory starts off with a space allotment of XXX GB and an inode allotment of 1,000,000 inodes, unless more space is requested (and agreed to by us) at the time the project is created.
 
 * An increase in disk quota or inode quota can be given either until a specific date (provided the project keeps going until that date), or until the end of the project. Especially in the latter case, we may have to reduce your disk quota if we face operational constraints.
 
-[See more details about the quota for the Pan cluster](https://wiki.auckland.ac.nz/display/CER/Projects+and+quota)
+[See more details about the quota on NeSI](XXX)
 
 To check your allocated disk space and file count quotas use:
 
@@ -54,14 +53,14 @@ What does that actually mean?
 - Used for building (compiling) your code
 - Used for test runs for your code
 - [More details on building your code on the Pan cluster](https://wiki.auckland.ac.nz/display/CER/Developing+software)
-- Pan has two build nodes:
-    -  build-wm   (Intel Westmere, NVIDIA Fermi)
-    -  build-sb (Intel Sandy Bridge, NVIDIA Kepler)
+- NeSI's Cray has nodes:
+    -  XXX
+    -  XXX
 
 To connect from the login node to a build node:
 
 ```
-ssh -YC  build-wm
+ssh -YC  XXX
 ```
 
 The -Y option makes X forwarding. This mean that any GUI applications running on the cluster can have windows output on your screen. It should be enabled by default if you are connecting to HPC from Linux. If you are on a Mac, you may need to install an X server (for example, [XQuartz](http://xquartz.macosforge.org/landing/)) 
@@ -93,9 +92,6 @@ fs_my_quota_usage
 ```
 
 
-
-
-
 ### Available software
 
 You can use a variety of software already installed on the cluster. 
@@ -107,8 +103,8 @@ LMOD is very useful to manage environment variables for each application and it 
 Syntax :```module [options] sub-command [args ...]```
 #### Loading/Unloading sub-commands
 * load | add : load module(s)
+* swap | switch : swap a module for another
 * del | unload: Remove module(s), do not complain if not found
-* purge: unload all modules
 * update: reload all currently loaded modules.
 
 #### Listing / Searching sub-commands

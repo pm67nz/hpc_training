@@ -4,13 +4,13 @@ NeSI Documentation for running a job: https://support.nesi.org.nz/hc/en-gb/artic
 
 Adapted from Jordi Blasco's [Introduction to SLURM documentation](https://wiki.auckland.ac.nz/download/attachments/63145549/introduction-slurm.pdf?api=v2)
 
-SLURM is the software used on the NeSI Pan cluster for managing and allocating the cluster resources when you submit a job. To run a job on the cluster, first you have to tell SLURM the requirements so that it can best allocate resources for all users over the entire cluster.
+SLURM is the software used on the NeSI supercomputers for managing and allocating the cluster resources when you submit a job. To run a job, first you have to tell SLURM the requirements so that it can best allocate resources for all users over the entire cluster.
 
 ## About SLURM
 
 - SLURM was an acronym for Simple Linux Utility for Resrouce Management
-- evolved into a capable job scheduler
-- Job manager and scheduler used on the NeSI Pan cluster
+- Evolved into a capable job scheduler
+- Used on NeSI supercomputers
 
 ## Features of SLURM
 
@@ -38,7 +38,7 @@ Jobs
 
 ## Queues
 
-On the NeSI Pan cluster there is a queuing system that assigns priority to jobs based on:
+A queuing system assigns priority to jobs based on:
 
 - Project type (decided upon at time of project application)
   - merit
@@ -47,8 +47,8 @@ On the NeSI Pan cluster there is a queuing system that assigns priority to jobs 
   - postgraduate
 
 - Wall time (specified at job runtime)
-  - high ( under 6 hours)
-  - medium ( over 6 hours but less than 24 hours)
+  - high (under 6 hours)
+  - medium (over 6 hours but less than 24 hours)
   - low (longer than 24 hours)
  
 Other considerations made by the queue are the number of jobs previously run by the user, and how long the job as spent in the queue
@@ -86,7 +86,7 @@ Other considerations made by the queue are the number of jobs previously run by 
 #SBATCH --ntasks=2		# 2 tasks
 #SBATCH --cpus-per-task=4	# number of cores per task
 #SBATCH --nodes=1		# number of nodes
-#SBATCH -C sb			# sb=Sandybridge,wm=Westmere
+#SBATCH --exclusive             # node should not be shared with other jobs
 ```
 
 

@@ -4,13 +4,13 @@ Training materials for a hands-on workshop on introduction to HPC using NeSI, in
 
 #### Contributors:
 
-Murray Cadzow, Matthew Healey, Gene Soudlenkov, Sung Bae, Benjamin Roberts,  Bart Verleye, Jordi Blasco, Martin Feller, Peter Maxwell, Sina Masoud-Ansari, Danny Baillie, Tom Kelly, and Aleksandra Pawlik
+Murray Cadzow, Matthew Healey, Gene Soudlenkov, Sung Bae, Benjamin Roberts,  Bart Verleye, Jordi Blasco, Martin Feller, Peter Maxwell, Sina Masoud-Ansari, Danny Baillie, Tom Kelly, Alexander Pletzer and Aleksandra Pawlik
 (if you are contributing to the materials, please add your name to the list)
 
 
 ## Learning objectives (what you will know after this workshop):
 
-* Learn how to log in on NeSI clusters (Pan) and navigate your  way thorough the environment set up on the login node.
+* Learn how to log in on NeSI supercomputers and navigate your way through the environment set up on the login node.
 * Know how to transfer (small to medium-sized) data files and scripts to the cluster via: scp or MobaXterm. 
 * Be able to connect to one of the build/compute nodes.
 * Understand (roughly) the difference between *login*, *build*/*development* and *compute* nodes, and how to use them when working on NeSI (or other HPC) infrastructure.
@@ -19,7 +19,7 @@ Murray Cadzow, Matthew Healey, Gene Soudlenkov, Sung Bae, Benjamin Roberts,  Bar
 * Know what a job scheduler is for and how to use it (modify a SLURM script, use SLURM commands in the command line mode).
 * Understand (roughly) what Message Passing Interface is for and become familar with its basic use.
 * Understand what queuing system is and become aware of the impact of submitting jobs to different typse of queues.
-* Be able to submit a job on a NeSI cluster (Pan) - based on the provided example using R scripts.
+* Be able to submit a job - based on the provided example using R scripts.
 * Understand the advantages of using parallelism computational work, and deploy it in the case of embarrassingly parallel jobs (by modifying SLURM script). Possibly be able to evaluate if the problem is embarrassingly parallel.
 * Be able to monitor the job state and execution.
 * Know how to access the output of the job and download locally files with output data.

@@ -54,10 +54,14 @@ There is no need to link code explicitly to the LAPACK and BLAS libraries.
 #### Example: Linking against NetCDF
 
 ```
-module load cray-hdf5-parallel
-module load cray-netcdf-hdf5parallel
+module load cray-netcdf cray-hdf5
 ftn -o simple_xy_par_wr -I$NETCDF_DIR/include simple_xy_par_wr.f90 \
     -L$NETCDF_DIR/lib -L$HDF5_DIR/lib \
-    -lnetcdff -lnetcdf -lhdf5_hl_parallel -lhdf5_parallel -dl
+    -lnetcdff -lnetcdf -lhdf5_hl_parallel -lhdf5_parallel
 ```
+
+Note that some modules will automatically set the additional compiler options so that users don't have to specify include and library directories or library names. For the example above it suffices to type
+```
+ftn -o simple_xy_par_wr simple_xy_par_wr.f90
+``` 
 

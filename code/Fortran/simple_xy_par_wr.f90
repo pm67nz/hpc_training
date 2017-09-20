@@ -112,8 +112,8 @@
        ! MPI library must be shut down.
        call MPI_Finalize(ierr)
      
-       if (my_rank .eq. 0) 
-           print *, "*** SUCCESS writing example file ", FILE_NAME, "! "
+       if (my_rank .eq. 0)  then
+         print *, "*** SUCCESS writing example file ", FILE_NAME, "! "
        endif
      
      contains

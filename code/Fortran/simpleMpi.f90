@@ -2,14 +2,14 @@ program simpleMpi
     use mpi
     implicit none
 
-    integer :: world_size, world_rank, name_length, ier 
+    integer :: world_size, world_rank, name_len, ier 
     character(len=MPI_MAX_PROCESSOR_NAME) :: processor_name
 
     ! Initialize the MPI environment
     call mpi_init(ier)
 
     ! Get the number of processes
-    call mpi_comm_size((MPI_COMM_WORLD, world_size, ier)
+    call mpi_comm_size(MPI_COMM_WORLD, world_size, ier)
 
     ! Get the rank of the process
     call mpi_comm_rank(MPI_COMM_WORLD, world_rank, ier)

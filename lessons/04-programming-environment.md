@@ -13,7 +13,7 @@ in all cases.
 
 ### Programming environments
 
-The default programming environment provides ```cray``` compilers; however, other vendor compilers can also be selected using 
+The default programming environment provides ```cray``` compilers; however, other compilers can also be selected using 
 
 ```
 module swap PrgEnv-cray PrgEnv-intel
@@ -23,8 +23,6 @@ to use the Intel compilers, or
 module swap PrgEnv-cray PrgEnv-gnu
 ```
 to use the GNU compilers. 
-
-There is no need to link code explicitly to the LAPACK and BLAS libraries.
 
 ### Common compiler options
 
@@ -50,10 +48,16 @@ module load craype-x86-skylake
 In general, you will need to specify the include or module files with the ```-I``` option and link against one of more libraries. Use ```-L``` 
 to specify the location of the libraries and ```-l``` the name of the libraries. Do not include You can have multiple ```-L``` and ```-l``` options. When specifying libraries with ```-l```, the order matters. Symbols are resolved from left to right; that is if library "A" depends on "B" then "A" should precede "B" (```-lA -lB```). Library "A" depends on "B" if "A" calls functions or invokes symbols that are defined in "B".
 
+There is no need to link code explicitly to the LAPACK and BLAS libraries.
+
+
 #### Example: Linking against NetCDF
 
 ```
+module load cray-hdf5-parallel
 module load cray-netcdf-hdf5parallel
-ftn -o simple_xy_par_wr -I$NETCDF_DIR/include simple_xy_par_wr.f90 -L$NETCDF_DIR/lib -lnetcdff -lnetcdf
+ftn -o simple_xy_par_wr -I$NETCDF_DIR/include simple_xy_par_wr.f90 \
+    -L$NETCDF_DIR/lib -L$HDF5_DIR/lib \
+    -lnetcdff -lnetcdf -lhdf5_hl_parallel -lhdf5_parallel -dl
 ```
 

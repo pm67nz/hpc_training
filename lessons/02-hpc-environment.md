@@ -112,7 +112,7 @@ Syntax :```module [options] sub-command [args ...]```
 * avail | av: List available modules
 * avail | av string: List available modules that contain "string".
 * spider: List all possible modules
-* spider module" List all possible version of that module file
+* spider module: List all possible version of that module file
 * spider string: List all module that contain the "string".
 
 #### Short-cuts

@@ -1,4 +1,9 @@
-## Getting access on NeSI supercomputers
+---
+layout: post
+title: Getting access on NeSI infrastructure
+---
+
+### Getting access on Kupe (HPC3)
 
 For the purpose of this workshop, you will be using NeSI supercomputers. Depending on the setup for the training workshop you will be given either a generic training account (which will become inactive after the workshop) or you will be able to use your own account (if you already have it).
 
@@ -10,7 +15,7 @@ In both cases you will be accessing the cluster using `ssh` which stands for "Se
 
 For the purpose of this workshop we will guide you through the process of logging on the supercomputers using SSH keys. Let's have a look at the [detailed guidelines for this procedure](https://wiki.auckland.ac.nz/display/CER/How+to+log+in+using+ssh+keys).
 
-Once you generated (following the guidelines above) the SSH private/public pair key, please send the **public** key (which will be saved as a file on your disk) as an attachment to support@nesi.org.nz 
+Once you generated (following the guidelines above) the SSH private/public pair key, please send the **public** key (which will be saved as a file on your disk) as an attachment to support@nesi.org.nz
 
 If you are working on a Windows machine using MobaXTerm, your public key should be located in the file *XXX_rsa_key.pub* which should be in the following location:
 
@@ -44,9 +49,6 @@ Now, when you generated the SSH keys and sent in the public one (not the private
 
 ```
 ​ssh -i ~/.ssh/XXX_rsa_key your_username@login.uoa.nesi.org.nz
-``` 
+```
 
 As you see, we need to add a *flag* (-i) pointing out the ssh to the location of *your private key*.
-
-
-

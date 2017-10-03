@@ -19,7 +19,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Training materials for a hands-on workshop on introduction to HPC using NeSI, intermediate HPC skills
   and elements of advanced HPC training.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://github.com/nesi/hpc_training" # the base hostname & protocol for your site, e.g. http://example.com
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: nesi_nz
 #github_username:  nesi
 

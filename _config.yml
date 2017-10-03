@@ -49,3 +49,5 @@ plugins:
 collections:
    lessons:
        output: true
+
+

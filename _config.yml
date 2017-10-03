@@ -25,7 +25,7 @@ twitter_username: nesi_nz
 
 # Build settings
 markdown: kramdown
-#theme: minima
+theme: minima
 plugins:
   - jekyll-feed
 
@@ -50,4 +50,4 @@ collections:
    lessons:
        output: true
 
-#theme: jekyll-theme-minimal
+

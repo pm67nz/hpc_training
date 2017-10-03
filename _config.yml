@@ -49,3 +49,4 @@ plugins:
 collections:
    lessons:
        output: true
+       permalink: /:path/

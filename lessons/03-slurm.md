@@ -1,4 +1,8 @@
-# SLURM
+---
+layout: post
+title: SLURM - job scheduler
+---
+
 
 NeSI Documentation for running a job: https://support.nesi.org.nz/hc/en-gb/articles/115000194910-Submitting-Slurm-Jobs-on-Pan
 
@@ -50,7 +54,7 @@ A queuing system assigns priority to jobs based on:
   - high (under 6 hours)
   - medium (over 6 hours but less than 24 hours)
   - low (longer than 24 hours)
- 
+
 Other considerations made by the queue are the number of jobs previously run by the user, and how long the job as spent in the queue
 
 ## Running a job
@@ -101,7 +105,7 @@ sbatch -A [Project Account] -t 10 --wrap "echo hello world"
 ```
 
 The options `-t` stands for *time* and sets a limit on the total run time of the job allocation. Note that each partition on which the jobs are run has its own time limit. If the set time limit exceeds the limit for the partition, the job will become "PENDING" (for more information on job statuses, see below).
-`--wrap` option means that the following string (in "") will be turned by SLURM in a simple shell script. 
+`--wrap` option means that the following string (in "") will be turned by SLURM in a simple shell script.
 
 
 ### Monitoring your work on the cluster
@@ -183,7 +187,7 @@ sbatch --array=1 -A [project_code] run_array-analysis.sl something.txt
 ```
 
 ```
-sbatch --array=1-2 -A [project_code] run_array-analysis.sl 
+sbatch --array=1-2 -A [project_code] run_array-analysis.sl
 ```
 
 ```
@@ -200,5 +204,3 @@ scancel [jobid]
 ```
 
 ```
-
-

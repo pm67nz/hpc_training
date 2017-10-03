@@ -12,15 +12,25 @@ The material is divided into different sections.
 
 The HPC3/Kupe Section covers:
 1)    HPC3 - overall architecture
+
 2)    Programming environment
+
 3)    How to access the system resources
+
 4)    Differences between HPC3 and Dev System
+
 5)    File systems and their usage
+
 6)    Data transfer and access
+
 7)    Job scheduler
+
 8)    Where are my files – from FitzRoy (why are recent files created on FitzRoy not on HPC3)
+
 9)    Software available
+
 10)   Getting help and finding documentation
+
 11)   Options for formal training later in the year (covering: Cray programming environment,  Allinea and more)
 
 

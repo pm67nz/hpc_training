@@ -1,6 +1,7 @@
-# Workshop setup
-
-### Getting access to NeSI
+---
+layout: post
+title: Setting up
+---
 
 To be able to work on NeSI supercomputers, you will need to get an account first. Depending on the workshop set up that you will be attending, the organisers may be able to get you to use generic training accounts. **Warning:** these training accounts, and any data associated with them, will be deleted immediately after the workshop. If you wish to continue working on your research using NeSI, you will need to apply for an account.
 
@@ -20,14 +21,14 @@ When you execute the line above, you will be asked to input your password and th
 
 ```
 Last login: Thu Mar  9 15:38:43 2017 from it346501.uoa.auckland.ac.nz
-     
+
       *******************************************************************
       **         Welcome to XXX, the NeSI Supercomputer                **
       **                                                               **
       *******************************************************************
-      
-      
-[ ~]$ 
+
+
+[ ~]$
 ```
 
 ### Working in Unix/Linux environment
@@ -58,7 +59,7 @@ To use `scp` to copy the file from your local machine type in the terminal on yo
 ```
 scp <path_to_files> <your_username>@XXX.nesi.org.nz:<destination_path>
 
-``` 
+```
 
 To specify the ssh key, use:
 
@@ -72,7 +73,7 @@ You need to replace the <path_to_files> and <destination_path> with the correct 
 scp data/inflammation-01.csv  apaw363@XXX.nesi.org.nz:/home/apaw363/
 ```
 
-If you set up the SSH keys correctly, then the file transfer should go through.  
+If you set up the SSH keys correctly, then the file transfer should go through.
 
 
 To transfer files to your local machine:
@@ -120,5 +121,4 @@ rsync -e ssh -av your_username@login.uoa.nesi.org.nz:/home/your_username/folder 
 
 ### Transfering large amount of data
 
-NeSI can provide support for transferring large amount of data (1 TB and more) via [Globus](https://www.globus.org/). If your organisation is a member of the Tuakiri Identification system, then the setup for this is fairly straightforward. 
-
+NeSI can provide support for transferring large amount of data (1 TB and more) via [Globus](https://www.globus.org/). If your organisation is a member of the Tuakiri Identification system, then the setup for this is fairly straightforward.

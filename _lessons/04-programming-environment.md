@@ -46,7 +46,7 @@ module load craype-x86-skylake
 ### Linking against an external library
 
 In general, you will need to specify the include or module files with the ```-I``` option and link against one of more libraries. Use ```-L``` 
-to specify the location of the libraries and ```-l``` the name of the libraries. Do not include You can have multiple ```-L``` and ```-l``` options. When specifying libraries with ```-l```, the order matters. Symbols are resolved from left to right; that is if library "A" depends on "B" then "A" should precede "B" (```-lA -lB```). Library "A" depends on "B" if "A" calls functions or invokes symbols that are defined in "B".
+to specify the location of the libraries and ```-l``` the name of the libraries. You can have multiple ```-L``` and ```-l``` options. When specifying libraries with ```-l```, the order matters. Symbols are resolved from left to right; that is if library "A" depends on "B" then "A" should precede "B" (```-lA -lB```). Library "A" depends on "B" if "A" calls functions or invokes symbols that are defined in "B".
 
 There is no need to link code explicitly to the LAPACK and BLAS libraries.
 

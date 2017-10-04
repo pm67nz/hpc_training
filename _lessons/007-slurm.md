@@ -6,7 +6,7 @@ title: HPC3 Slurm job scheduler
 
 SLURM is a software used on the NeSI supercomputers for scheduling and managing job submission requests. A job is a script that tells the scheduler how much resources you will require to perform a given computational work. SLURM will then try to accommodate your request while maximising overall user experience. 
 
-SLURM was an acronym for Simple Linux Utility for Resrouce Management
+SLURM was an acronym for Simple Linux Utility for Resource Management
 
 Additional information can be found at: https://support.nesi.org.nz/hc/en-gb/articles/115000194910-Submitting-Slurm-Jobs-on-Pan
 
@@ -122,7 +122,7 @@ And the output will look more or less like this:
 61568970 merit_sho     wrap  apaw363 PD       0:00      1 (Resources)
 ```
 
-Another useful SLURM command is `saccat` which retrieves information about submitted jobs with regards to the accounts. For example:
+Another useful SLURM command is `sacct` which retrieves information about submitted jobs with regards to the accounts. For example:
 
 ```
 sacct -j 61568970

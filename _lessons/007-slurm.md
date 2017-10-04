@@ -3,17 +3,15 @@ layout: post
 title: HPC3 Slurm job scheduler
 ---
 
-NeSI Documentation for running a job: https://support.nesi.org.nz/hc/en-gb/articles/115000194910-Submitting-Slurm-Jobs-on-Pan
+
+SLURM is a software used on the NeSI supercomputers for scheduling and managing job submission requests. A job is a script that tells the scheduler how much resources you will require to perform a given computational work. SLURM will then try to accommodate your request while maximising overall user experience. 
+
+SLURM was an acronym for Simple Linux Utility for Resrouce Management
+
+Additional information can be found at: https://support.nesi.org.nz/hc/en-gb/articles/115000194910-Submitting-Slurm-Jobs-on-Pan
 
 Adapted from Jordi Blasco's [Introduction to SLURM documentation](https://wiki.auckland.ac.nz/download/attachments/63145549/introduction-slurm.pdf?api=v2)
 
-SLURM is the software used on the NeSI supercomputers for managing and allocating the cluster resources when you submit a job. To run a job, first you have to tell SLURM the requirements so that it can best allocate resources for all users over the entire cluster.
-
-## About SLURM
-
-- SLURM was an acronym for Simple Linux Utility for Resrouce Management
-- Evolved into a capable job scheduler
-- Used on NeSI supercomputers
 
 ## Features of SLURM
 

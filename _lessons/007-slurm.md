@@ -122,7 +122,7 @@ And the output will look more or less like this:
 61568970 merit_sho     wrap  apaw363 PD       0:00      1 (Resources)
 ```
 
-Another useful SLURM command is `sacct` which retrieves information about submitted jobs with regards to the accounts. For example:
+Another useful SLURM command is `sacct` which retrieves information about completed jobs. For example:
 
 ```
 sacct -j 61568970
@@ -131,11 +131,13 @@ sacct -j 61568970
 Will show us something like:
 
 ```
-       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
------------- ---------- ---------- ---------- ---------- ---------- --------
-61568970           wrap merit_sho+  nesi00357          1  COMPLETED      0:0
-61568970.ba+      batch             nesi00357          1  COMPLETED      0:0
+        JobName        JobID      User               Start    Elapsed     AveCPU     MinCPU   TotalCPU  AllocCPUS      State     ReqMem     MaxRSS                       NodeList
+--------------- ------------ --------- ------------------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- ------------------------------
+           wrap     61568970   apaw363 2017-09-22T08:05:28   00:00:00                        00:00.071          1  COMPLETED        1Gc                       compute-physics-001
+          batch 61568970.ba+           2017-09-22T08:05:28   00:00:00   00:00:00   00:00:00  00:00.071          1  COMPLETED        1Gc      1760K            compute-physics-001
 ```
+
+The "MaxRSS" column reports the memory used during the job and is useful when trying to determine a sensible amount of memory to request in the submission script.
 
 ### Job outputs
 

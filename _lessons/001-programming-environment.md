@@ -12,7 +12,7 @@ CC -o simpleMpiCxx simpleMpi.cxx  # compile C++ code
 ```
 
 There is no need to invoke special compilers for MPI code or to apply special compiler options for code with OpenMP directives - use ftn, cc, and CC
-in all cases. It is also not recommended to invoke compilers directly instead of using the compiler drivers, to ensure correct linking.
+in all cases. 
 
 ### Programming environments
 
@@ -26,6 +26,8 @@ to use the Intel compilers, or
 module swap PrgEnv-cray PrgEnv-gnu
 ```
 to use the GNU compilers.
+
+You should always invoke the ```ftn```, ```cc``` and ```CC``` compiler wrappers to ensure correct linking, regardless of the programming environment. 
 
 ### Common compiler options
 
@@ -87,7 +89,9 @@ EasyBuild uses the following module naming conventions ("toolchain names"):
 3. You need to link against your own library
 
 In this case, you will need to specify the include or Fortran module files with the ```-I``` option. Use ```-L```
-to specify the location of the libraries and ```-l``` the name of the libraries. You can have multiple ```-L``` and ```-l``` options. When specifying libraries with ```-l```, the order matters. Symbols are resolved from left to right; that is if library "A" depends on "B" then "A" should precede "B" (```-lA -lB```). Library "A" depends on "B" if "A" calls functions or invokes symbols that are defined in "B".
+to specify the location of the libraries and ```-l``` the name of the libraries. Libraries typically have the prefix ```lib``` and either ```.so``` or ```.a``` as suffix.  Do not include the lib prefix or the suffix when passing a library name to the ```-l``` option. For instance, library "A" might be called ```libA.a``` and to link against "A" you would use ```-lA```. 
+
+You can have multiple ```-L``` and ```-l``` options. When specifying libraries with ```-l```, the order matters. Symbols are resolved from left to right; that is if library "A" depends on "B" then "A" should precede "B" (```-lA -lB```). Library "A" depends on "B" if "A" calls functions or invokes symbols that are defined in "B".
 
 #### Example 1: Linking against NetCDF with any compiler (library provided by Cray)
 ```

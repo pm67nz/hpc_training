@@ -36,7 +36,10 @@ Globus provides [Software Development Kit (SDK) in Python to work with its API.]
 The FreeIPA REST API that provides access to FreeAPI and the 389DS LDAP directory has a Python module
 
 * **Elastic**
-The Elastic range of applications Elasticsearch, Logstash and Kibana (ELK)
+  - Elasticsearch
+  [Elasticsearch API](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/docs.html)
+  There is an official [Elasticsearch Python library](https://elasticsearch-py.readthedocs.io/en/master/) to work with Elasticsearch REST API
 
-* **Elasticsearch**
-  REST API has a Python module
+  - [Longstash Monitoring API](https://www.elastic.co/guide/en/logstash/5.0/monitoring.html)
+
+  

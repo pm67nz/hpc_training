@@ -3,37 +3,36 @@ layout: post
 title: HPC3 - Accessing system resources
 ---
 
-You will be able to access Kupe similarily to other standard HPC resources via logging in using a terminal  on your local machine. NeSI is also offering new functionality enabling users to access selected applications and services via API. Some of that API is developed by NeSI and some ships  with installed software.
+### Logging in for the first time
+
+If you are logging in for the first time onto HPC3, you will need to set up your password using [NeSI User Portal](https://my.nesi.org.nz/accounts).
+
+1. Log into the NeSi User Portal using your institutional credentials via Tuakiri.
+2. Select "My account" tab.
+3. Set password for Kupe (HPC3).
+
+If you are connecting within the NIWA network, you will be able to access Kupe (HPC3) diretcly via SSH (see details below). However, if you are connecting to Kupe from outside of NIWA network (which will be the case for all non-NIWA users), you need to set up Google Authenticator which NeSI uses for the two-factor authentication system. You can do that via NeSI User Portal:
+
+4. Click "Link mobile device"
+5. This will open instructions for setting up Google Authenticator. Note that you will need to have a smartphone for this. If you do not have a smartphone, you can use [GAuth add-on](https://chrome.google.com/webstore/detail/ilgcnhelpchnceeipipijaljkblbcobl) for Chrome browser.
+
+
+
 
 ### Logging into Kupe (HPC3)
 
-In order to log into Kupe (HPC3), use `ssh`
+1. In order to log into Kupe (HPC3), use `ssh` on the terminal on your local machine.
 
 ```
    ​ssh your_username@kupe.niwa.co.nz
 ```
 
-### NeSI APIs
+2. Enter your password (the one you set up in NeSI User Portal)
 
-Users will be able to access a number of NeSI applications and services via NeSI API. NeSI Portal API allows users for detailed monitoring of use of allocated core hours, job status and so on.
-
-
+3. If you are logging in from outside of NIWA network, you will need to enter 6-digit code from the Google Authenticator which you set up (see above).
 
 
-
-### NeSI Data Transfer service - Globus
-Globus used for efficient and secure data transfer provides an API for:
-
- * [Globus Auth](https://docs.globus.org/api/auth/)
- * [Globus Transfer API](https://docs.globus.org/api/transfer/)
-
-Globus provides [Software Development Kit (SDK) in Python to work with its API.](http://globus-sdk-python.readthedocs.io/en/latest/)
-
-
-
-### Other software APIs
-* **FreeIPA**
-The FreeIPA REST API that provides access to FreeAPI and the 389DS LDAP directory has a Python module
+### API Access
 
 * **Elastic**
   - Elasticsearch
@@ -41,5 +40,3 @@ The FreeIPA REST API that provides access to FreeAPI and the 389DS LDAP director
   There is an official [Elasticsearch Python library](https://elasticsearch-py.readthedocs.io/en/master/) to work with Elasticsearch REST API
 
   - [Longstash Monitoring API](https://www.elastic.co/guide/en/logstash/5.0/monitoring.html)
-
-  

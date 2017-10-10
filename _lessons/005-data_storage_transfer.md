@@ -13,3 +13,11 @@ A dedicated cluster is reserved for the Shared Service nodes.
 Data transfer is available via SecureCopy `scp` for small-sized data.
 
 For large-size data users can use Globus.
+
+#### Globus API
+Globus used for efficient and secure data transfer provides an API for:
+
+ * [Globus Auth](https://docs.globus.org/api/auth/)
+ * [Globus Transfer API](https://docs.globus.org/api/transfer/)
+
+Globus provides [Software Development Kit (SDK) in Python to work with its API.](http://globus-sdk-python.readthedocs.io/en/latest/)

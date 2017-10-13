@@ -23,6 +23,66 @@ Adapted from Jordi Blasco's [Introduction to SLURM documentation](https://wiki.a
 - Environment privacy
 - Job profiling
 
+## Getting started
+
+To use the SLURM scheduler on Kupe, you will first need to load the `SLURM` module:
+```
+module load slurm
+```
+You could add this line to your `.profile` if you don't want to load the module on every login.
+
+## Submitting a job
+
+SLURM works like any other scheduler - you can submit jobs to a queue, and SLURM will run them for you when the resources that you requested become available. Jobs are usually defined using a job script, although you can also submit jobs without a script, directly from the command line.
+
+Here is a simple example. Build the Fortran MPI program first, if you haven't done so already:
+```
+ftn -o simpleMpiF90 simpleMpi.f90
+```
+Then change to the `SLURM` directory and have a look at the file `run_simplempif90.sl`:
+```
+cat run_simplempif90.sl
+```
+Let's have a look at the directives:
+```
+#SBATCH --job-name=simplempif90
+#SBATCH --time=00:01:00
+```
+These two set a job name (for your reference) and the wallclock time, after which the job will be automatically cancelled if it has not finished yet.
+```
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=1
+```
+The job will be run on a single node and with 4 MPI tasks. Each MPI task will run only one thread.
+```
+#SBATCH --mem-per-cpu=1G
+```
+Each task may use up to 1GB of memory, otherwise it will be cancelled.
+
+**Important note:** Unlike LoadLeveler, SLURM expects directives to come first in a submission script - don't insert any commands above the directives block.
+
+The program is then launched using the `srun` command:
+```
+srun --exclusive ../Fortran/simpleMpiF90
+```
+This command will create the MPI runtime environment need to run the parallel program. Passing the `--exclusive` flag will make sure that no other job will be run on the same node.
+
+We can now submit the job using the command
+```
+sbatch run_simplempif90.sl
+```
+Similar to other schedulers, `stdout` and `stderr` are written into files `slurm-<job number>.out` and `slurm-<job number>.err`.
+
+To check if your job is running, use the command
+```
+squeue
+```
+To cancel a job, use
+```
+scancel <job id>
+```
+
 ## Resource management
 
 ### Nodes and Job States

@@ -1,30 +1,39 @@
 ---
 layout: post
-title: HPC3 Overview of Kupe architecture
+title: Overview of Kupe architecture
 ---
 
 
 ## Architecture
 
-Kupe is a Massively Parallel Capability Computer (Supercomputer) Cray XC50.
+Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Supercomputer) and built on the Cray XC50 platform.
 
-#### Hardware features:
-* 104 compute Skylake (SKL) nodes, with 19 DVS (Data Virtualization Service) links for accessing Spectrum Scale filesystems, and Cray Aries interconnect
-   - 21 links:
-      - 19 links: Persistent/Research & Operational, NearLine storage
-      - 2 links: 2 CDL servers
-* 2 eLogin (SKL) Build/Login nodes
-      - HDD storage
-      - native access to Spectrum Scale filesystems
-* 11  CS500 Multi-Purpose nodes (Skylake, also including 1 P100 GPGPU)
-    - 11 links:
-       - 5 Multi-Purpose nodes  (including 1 P100 GPGPU)
-       - 6 VirualLab nodes
-    - 2 × 1.2TB of SSD storage per node
-    - native access to Spectrum Scale filesystems
-* 4 CS400 nodes Shared Service (Broadwell)
-     -  2 × 1.2TB of SSD storage per node
-* 1 Management node (Broadwell)
+#### Compute Hardware:
+* 104 XC50 compute nodes
+   - 2x Intel Xeon Gold 6148 2.4 GHz processor with 20 physical cores each (thus a total of 40 physical cores)
+   - 2-way hyperthreading with a total of 80 logical cores per node
+   - Cray Aries interconnect (low-latency network, used by MPI jobs, IO, ...)
+   - 19 DVS (Data Virtualization Service) links for accessing Spectrum Scale filesystems over Cray Aries (currently no native access possible), which may limit IO performance for some jobs
+   - Used only for running jobs, no direct access
+   - Run on a slim version of SLES (Linux)
+* 2 eLogin nodes
+   - Same Intel Xeon Gold 6148 SKL processor as compute nodes (no cross-compilation needed!)
+   - Native access to Spectrum Scale filesystems
+   - Lots of memory
+   - Used for building codes, submitting jobs, ...
+   - Run on a full version of SLES
+* 11 CS500 nodes
+   - Same Intel Xeon Gold 6148 SKL processor as compute nodes (no cross-compilation needed!)
+   - Some nodes include a Nvidia Tesla P100 GPGPU
+   - Native access to Spectrum Scale filesystems (ideal for IO-intensive jobs)
+   - Multi-Purpose nodes for running batch jobs, e.g., preprocessing or postprocessing of HPC jobs (no interactive access)
+   - Virtual Lab nodes for interactive work with remote desktop capability
+   - Nodes will be accessible as virtual machines
+   - Run a full version of CentOS 7
+* 4 CS400 nodes
+   - Shared Service nodes with Broadwell CPUs
+   - Most are not for user access
+* 1 Management node with Broadwell CPUs
 
 #### Hardware details:
 * Multipurpose nodes
@@ -36,7 +45,7 @@ Kupe is a Massively Parallel Capability Computer (Supercomputer) Cray XC50.
 
 #### Storage
 * IBM Spectrum Scale (formerly GPFS)
-* dedicated cluster for the Shared Service nodes
+* Dedicated cluster for the Shared Service nodes
 * EDR (Enhanced Data Rate) InfiniBand network for access from build nodes and multi-purpose nodes to ensure high throughput and low latency
 * Cray DVS provides access to Spectrum Scale from compute nodes via the Aries interconnect
 

@@ -3,7 +3,31 @@ layout: post
 title:  HPC3 Programming Environment
 ---
 
-Cray provides compiler wrappers, which should be used to compile Fortran, C and C++ code:
+Please use `git clone` to download this repository, if you want to try out compiling codes yourself:
+
+```
+git clone https://github.com/nesi/hpc_training.git
+```
+
+Then go to the `code` directory:
+
+```
+cd hpc_training/code
+```
+
+There are further subdirectories with the different examples that will be shown in this session.
+
+### Targeting a CPU
+
+A CPU target should be loaded before building any code. This means that you instruct the compiler to use instructions that are understood by this particular CPU (or a younger CPU in the same family, such as Intel's x86 CPUs). Otherwise you will see a warning message from the Cray compiler driver whenever you try to compile code. Although the compilers will still work, the resulting code is not optimised for the Skylake processor. So be sure to load
+```
+module load craype-x86-skylake
+```
+The resulting executable will not run on older processors, such as the Broadwell family which is used for the upcoming HPC1. Codes will either crash with an "illegal instruction" error, or display an error message if built with an Intel compiler.
+
+### Compiler Wrappers
+
+Cray provides compiler wrappers, which should be used to compile Fortran, C, and C++ code:
 
 ```
 ftn -o simpleMpiF90 simpleMpi.f90 # compile Fortran code
@@ -11,12 +35,13 @@ cc -o simpleMpiC simpleMpi.c      # compile C code
 CC -o simpleMpiCxx simpleMpi.cxx  # compile C++ code
 ```
 
-There is no need to invoke special compilers for MPI code or to apply special compiler options for code with OpenMP directives - use ftn, cc, and CC
-in all cases. 
+Note that these wrappers are always the same, regardless of your choice of compiler (Cray, Intel, or GNU). The wrappers will ensure correct linking of your code with compiler runtime libraries, and with Cray-supported libraries (such as Cray's `libsci` scientific library, or netCDF). We will get to that topic later in this session.
+
+There is also no need to invoke special compilers for MPI code or to apply special compiler options for code with OpenMP directives - use ftn, cc, and CC in all cases. 
 
 ### Programming environments
 
-The default programming environment provides ```cray``` compilers; however, other compilers can also be selected using
+The default programming environment provides Cray's CCE (Cray Compiler Environment) for Fortran, C, and C++. However, other compilers can also be selected using
 
 ```
 module swap PrgEnv-cray PrgEnv-intel
@@ -27,27 +52,33 @@ module swap PrgEnv-cray PrgEnv-gnu
 ```
 to use the GNU compilers.
 
-You should always invoke the ```ftn```, ```cc``` and ```CC``` compiler wrappers to ensure correct linking, regardless of the programming environment. 
+You should always invoke the ```ftn```, ```cc``` and ```CC``` compiler wrappers to ensure correct linking, regardless of the programming environment.
+
+Note that swapping programming environments will automatically swap Cray-provided libraries - but this will **not** be the case for libraries provided by NeSI or NIWA.
 
 ### Common compiler options
 
-The list of compiler options differs for each programming environment. To type get the list of common options across programming environments and compiler driver options, type for instance
+Although the compiler drivers have a few options of their own, they will pass through any compiler options you set - this means that you simply set the exact same options that you would have used with the underlying compiler. For example, if you are using the `gfortran` compiler and wanted to activate compiler warnings and compiler optimisation, you would use the following command:
+
 ```
-man ftn
+ftn -Wall -O2 -o simpleMpiF90 simpleMpi.f90
 ```
+
 To see the compiler options that are specific to a compiler, type
 ```
 man crayftn
+man icc
+man g++
 ```
-for instance.
+for instance - don't forget to to load the corresponding programming environment first.
 
-### Targeting a particular CPU
+The wrappers provide their own options, and a few options that are common accross programming environments. You can look at them using
+```
+man ftn
+man cc
+man CC
+```
 
-A CPU target should be loaded before building code. A warning message that no target has been selected will otherwise appear. Although the compilers will still work, the resulting code is not optimised for the Skylake processor. So be sure to load
-```
-module load craype-x86-skylake
-```
-The resulting executable will not run on older processors, such as the Broadwell family. Codes will either crash with an "illegal instruction" error, or display an error message if built with an Intel compiler.
 
 ### Linking against an external library
 

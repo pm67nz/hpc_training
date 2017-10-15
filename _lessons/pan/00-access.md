@@ -1,6 +1,15 @@
-## Getting access on NeSI supercomputers
+### Logging in for the first time
 
-For the purpose of this workshop, you will be using NeSI supercomputers. Depending on the setup for the training workshop you will be given either a generic training account (which will become inactive after the workshop) or you will be able to use your own account (if you already have it).
+If you are logging in for the first time onto HPC3, you will need to set up your password using [NeSI User Portal](https://my.nesi.org.nz/accounts).
+
+1. Log into the NeSi User Portal using your institutional credentials via Tuakiri.
+2. Select "My account" tab.
+3. Set password for Kupe (HPC3).
+
+If you are connecting within the NIWA network, you will be able to access Kupe (HPC3) diretcly via SSH (see details below). However, if you are connecting to Kupe from outside of NIWA network (which will be the case for all non-NIWA users), you need to set up Google Authenticator which NeSI uses for the two-factor authentication system. You can do that via NeSI User Portal:
+
+4. Click "Link mobile device"
+5. This will open instructions for setting up Google Authenticator. Note that you will need to have a smartphone for this. If you do not have a smartphone, you can use [GAuth add-on](https://chrome.google.com/webstore/detail/ilgcnhelpchnceeipipijaljkblbcobl) for Chrome browser.
 
 ### Connecting via SSH
 
@@ -10,7 +19,7 @@ In both cases you will be accessing the cluster using `ssh` which stands for "Se
 
 For the purpose of this workshop we will guide you through the process of logging on the supercomputers using SSH keys. Let's have a look at the [detailed guidelines for this procedure](https://wiki.auckland.ac.nz/display/CER/How+to+log+in+using+ssh+keys).
 
-Once you generated (following the guidelines above) the SSH private/public pair key, please send the **public** key (which will be saved as a file on your disk) as an attachment to support@nesi.org.nz 
+Once you generated (following the guidelines above) the SSH private/public pair key, please send the **public** key (which will be saved as a file on your disk) as an attachment to support@nesi.org.nz
 
 If you are working on a Windows machine using MobaXTerm, your public key should be located in the file *XXX_rsa_key.pub* which should be in the following location:
 
@@ -44,9 +53,6 @@ Now, when you generated the SSH keys and sent in the public one (not the private
 
 ```
 ​ssh -i ~/.ssh/XXX_rsa_key your_username@login.uoa.nesi.org.nz
-``` 
+```
 
 As you see, we need to add a *flag* (-i) pointing out the ssh to the location of *your private key*.
-
-
-

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: HPC3 Where are my files (FitzRoy or HPC3)?
+title: HPC3 Users' data and software migration to Kupe
 ---
 
 
 ### Files migration
 
-All FitzRoy users' files  will be migrated to HPC3 where each user will have their allocated home space. 
+All FitzRoy users' files  will be migrated to Kupe where each user will have their allocated home space.

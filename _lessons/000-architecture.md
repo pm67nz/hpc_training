@@ -10,6 +10,16 @@ Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Sup
 
 #### Compute Hardware:
 * 104 XC50 compute nodes
+   - 2x Intel Xeon Gold 6148 2.4 GHz processor with 20 physical cores each
+* 11 CS500 nodes
+   - Same Intel Xeon Gold 6148 SKL processor as compute nodes
+* Storage: IBM Spectrum Scale (formerly GPFS)
+
+
+If you are interested in learning more about the hardware, please find the details below.
+
+##### More hardware details:
+* 104 XC50 compute nodes
    - 2x Intel Xeon Gold 6148 2.4 GHz processor with 20 physical cores each (thus a total of 40 physical cores)
    - 2-way hyperthreading with a total of 80 logical cores per node
    - Cray Aries interconnect (low-latency network, used by MPI jobs, IO, ...)
@@ -34,8 +44,6 @@ Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Sup
    - Shared Service nodes with Broadwell CPUs
    - Most are not for user access
 * 1 Management node with Broadwell CPUs
-
-#### Hardware details:
 * Multipurpose nodes
    - non-interactive worker nodes for batch processing of data as part of pre-processing and post-processing jobs for the HPC
 * VirtualLab nodes
@@ -44,7 +52,6 @@ Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Sup
    - controlled by NIWA.
 
 #### Storage
-* IBM Spectrum Scale (formerly GPFS)
 * Dedicated cluster for the Shared Service nodes
 * EDR (Enhanced Data Rate) InfiniBand network for access from build nodes and multi-purpose nodes to ensure high throughput and low latency
 * Cray DVS provides access to Spectrum Scale from compute nodes via the Aries interconnect

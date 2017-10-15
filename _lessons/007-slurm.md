@@ -4,7 +4,7 @@ title: HPC3 Slurm job scheduler
 ---
 
 
-SLURM is a software used on the NeSI supercomputers for scheduling and managing job submission requests. A job is a script that tells the scheduler how much resources you will require to perform a given computational work. SLURM will then try to accommodate your request while maximising overall user experience. 
+SLURM is a software used on the NeSI supercomputers for scheduling and managing job submission requests. A job is a script that tells the scheduler how much resources you will require to perform a given computational work. SLURM will then try to accommodate your request while maximising overall user experience.
 
 SLURM was an acronym for Simple Linux Utility for Resource Management
 
@@ -97,22 +97,7 @@ Jobs
 - suspended/preempted
 - cancelled/completed/failed
 
-## Queues
 
-A queuing system assigns priority to jobs based on:
-
-- Project type (decided upon at time of project application)
-  - merit
-  - institution
-  - proposal development
-  - postgraduate
-
-- Wall time (specified at job runtime)
-  - high (under 6 hours)
-  - medium (over 6 hours but less than 24 hours)
-  - low (longer than 24 hours)
-
-Other considerations made by the queue are the number of jobs previously run by the user, and how long the job as spent in the queue
 
 ## Running a job
 

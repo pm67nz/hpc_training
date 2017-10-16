@@ -3,12 +3,52 @@ layout: post
 title: HPC3 Available software
 ---
 
-Most software packages installed on FitzRoy will be available on Kupe (HPC3).
-The list of available software can be obtained with the 
+### Architectures
+
+Kupe consists of nodes with two different architectures and operating systems:
+
+* XC50 compute nodes that run a slim version of SLES (SUSE Linux Enterprise Server)
+* Virtualised CS500 nodes that run a full version of CentOS
+
+NeSI and NIWA will offer separate software stacks, due to different installation and maintenance policies. The NIWA software stack will mostly be used by NIWA's forecasting operations, while the NeSI software stack is for general use.
+
+The software stack loosely falls into different categories, such as tools, general scientific libraries, or libraries that will be used with large codes (which typically have Fortran bindings and are therefore compiler-dependent.
+
+Due to the different operating systems and runtime resource constraints (available cores, memory, IO bandwidth; see previous lesson), software will be mainly built for either the XC50 or CS500 platform using different default compilers. Any given software package may still run on the other platform. The case of libraries for large codes is particular as they typically come with Fortran bindings. These require using the same compiler to build the library and the user code.
+
+| Type                                      | Default Compiler | XC50 (SLES)        | CS500 (CentOS)     |
+|-------------------------------------------|------------------|:------------------:|:------------------:|
+| Tools (e.g., NCL, gnuplot)                | GNU              |                    | :heavy_check_mark: |
+| General scientific libraries (e.g., GDAL) | GNU              |                    | :heavy_check_mark: |
+| Libraries for large codes (e.g., XIOS)    | Cray, Intel, GNU | :heavy_check_mark: |                    |
+
+### Modules
+
+Most software packages installed on FitzRoy will be available on Kupe (HPC3) using [Lmod](https://lmod.readthedocs.io/en/latest/) modules. Using Lmod is largely the same as using the traditional environment modules, but Lmod has a few additional tricks.
+
+A list of available software can be obtained with the 
 ```
 module avail 
 ```
-command. Scientific software packages that have been migrated or installed so far include:
+command. This will bring up software provided by Cray, and additional modules provided by NeSI or NIWA. You can also find out which variants of a particular module exist using
+```
+module avail <module name>
+```
+To get a list of modules that you are currently using, type
+```
+module list
+```
+To get information about a particular module, use
+```
+module help <module name>
+module show <module name>
+```
+To find all modules that, e.g., have "python" in their name, use
+```
+module spider python
+```
+
+Scientific software packages that have been migrated or installed so far include:
 
 * Anaconda Python
 * SpecFEM

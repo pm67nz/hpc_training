@@ -12,7 +12,7 @@ All FitzRoy users' files  will be migrated to Kupe where each user will have the
 
 As Kupe will use SLURM to manage submitted jobs, you will need to rewrite your scripts to make them compatible with the new job scheduler.
 
-| Commands                                                                                            |
+#### Commands                                                                                          
 |---------------------------------------------------|-------------------------------------------------|
 | LoadLeveler                                       |  Slurm                                          |
 |---------------------------------------------------|-------------------------------------------------|
@@ -20,7 +20,7 @@ As Kupe will use SLURM to manage submitted jobs, you will need to rewrite your s
 | llcancel <job_id>                                 | scancel <job_id>
 | llq -u <user_name>                                | squeue -u <user_name> 
 
-| Script directives                                                                                   |
+#### Script directives                                                                                 
 |-----------------------------------------------------------------------------------------------------|
 | LoadLeveler                                       | Slurm                                           |
 |---------------------------------------------------|-------------------------------------------------|
@@ -40,7 +40,7 @@ As Kupe will use SLURM to manage submitted jobs, you will need to rewrite your s
 | #@ queue                                          | NA
 
 
-| Environment variables                                                                                   |
+#### Environment variables                                                                               
 |-----------------------------------------------------------------------------------------------------|
 | LoadLeveler                                       | Slurm                                           |
 |---------------------------------------------------|-------------------------------------------------|

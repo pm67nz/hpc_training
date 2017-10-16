@@ -6,11 +6,11 @@ title: Overview of Kupe architecture
 
 ## Architecture
 
-Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Supercomputer) and built on the Cray XC50 platform.
+Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Supercomputer) built on the Cray XC50 platform.
 
 #### Compute Hardware:
 * 104 XC50 compute nodes
-   - 2x Intel Xeon Gold 6148 2.4 GHz processor with 20 physical cores each
+   - 2x Intel Xeon Gold 6148 2.4 GHz processor with 20 physical cores each (total of 40 physical cores per node)
 * 11 CS500 nodes
    - Same Intel Xeon Gold 6148 SKL processor as compute nodes
 * Storage: IBM Spectrum Scale (formerly GPFS)
@@ -20,12 +20,11 @@ If you are interested in learning more about the hardware, please find the detai
 
 ##### More hardware details:
 * 104 XC50 compute nodes
-   - 2x Intel Xeon Gold 6148 2.4 GHz processor with 20 physical cores each (thus a total of 40 physical cores)
    - 2-way hyperthreading with a total of 80 logical cores per node
    - Cray Aries interconnect (low-latency network, used by MPI jobs, IO, ...)
    - 19 DVS (Data Virtualization Service) links for accessing Spectrum Scale filesystems over Cray Aries (currently no native access possible), which may limit IO performance for some jobs
    - Used only for running jobs, no direct access
-   - Run on a slim version of SLES (Linux)
+   - Runs a slim version of SLES (Linux)
 * 2 eLogin nodes
    - Same Intel Xeon Gold 6148 SKL processor as compute nodes (no cross-compilation needed!)
    - Native access to Spectrum Scale filesystems
@@ -60,9 +59,9 @@ Kupe is installed in Auckland in the Tamaki Data Centre, with IBM storage over E
 Multi-Cluster Spectrum Scale filesystems.
 
 #### Main improvements
-* Faster processors so current work is done faster.
+* Faster processors compared to those on Fitzroy or Pan
 * GPGPU (General Purpose Graphical Processing Unit) nodes to support science codes and visualisation
-* A Linux user environment that will make it easier to manage work, develop and run research workloads/jobs, and apply data analytics tools.
+* A Linux user environment that will make it easier to manage work, develop and run research workloads/jobs, and apply data analytics tools
 * Increased storage capacity and hierarchical storage management to minimise the need to move data between the HPC storage and a user’s home institution, and underpin the new interactive data analysis services.
-* Vastly increased file system performance reducing the time spent reading and writing data to the filesystems.
+* Vastly increased file system performance, reducing the time spent reading and writing data to the filesystems.
 * More advanced feature sets which provide more opportunities to develop faster codes.

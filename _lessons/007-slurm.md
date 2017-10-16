@@ -33,13 +33,21 @@ You could add this line to your `.profile` if you don't want to load the module 
 
 ## Submitting a job
 
-SLURM works like any other scheduler - you can submit jobs to a queue, and SLURM will run them for you when the resources that you requested become available. Jobs are usually defined using a job script, although you can also submit jobs without a script, directly from the command line.
+SLURM works like any other scheduler - you can submit jobs to a queue, and SLURM will run them for you when the resources that you requested become available. Jobs are usually defined using a job script, although you can also submit jobs without a script, directly from the command line:
 
-Here is a simple example. Build the Fortran MPI program first, if you haven't done so already:
+```
+sbatch -A [Project Account] -t 10 --wrap "echo hello world"
+sbatch --account [Project Account] --time 10 --wrap "echo hello world"
+```
+These two variants of the command are equivalent - SLURM offers short and long versions of many options (although there is no short form of `--warp`. The option `-t` or `--time` sets a limit on the total run time of the job allocation. Note that each partition on which the jobs are run has its own time limit. If the set time limit exceeds the limit for the partition, the job will become "PENDING" (for more information on job statuses, see below). The `--wrap` option means that the following string (in "") will be turned into a simple shell script by SLURM.
+
+You should now find an output file named `slurm-<job ID>.out` that contains stdout captured by SLURM, so it should have the phrase `hello world` in it.
+
+Here is another simple example. Build the Fortran MPI program in the `code/Fortran` directory first, if you haven't done so already:
 ```
 ftn -o simpleMpiF90 simpleMpi.f90
 ```
-Then change to the `SLURM` directory and have a look at the file `run_simplempif90.sl`:
+Then change to the `code/SLURM` directory and have a look at the file `run_simplempif90.sl`:
 ```
 cat run_simplempif90.sl
 ```
@@ -48,13 +56,13 @@ Let's have a look at the directives:
 #SBATCH --job-name=simplempif90
 #SBATCH --time=00:01:00
 ```
-These two set a job name (for your reference) and the wallclock time, after which the job will be automatically cancelled if it has not finished yet.
+These two set a job name (for your reference) and the wallclock time, as in our previous example.
 ```
 #SBATCH --nodes=1
 #SBATCH --ntasks=4
 #SBATCH --cpus-per-task=1
 ```
-The job will be run on a single node and with 4 MPI tasks. Each MPI task will run only one thread.
+The job will be run on a single node and with 4 MPI tasks. Each MPI task will run only on one thread.
 ```
 #SBATCH --mem-per-cpu=1G
 ```
@@ -66,18 +74,21 @@ The program is then launched using the `srun` command:
 ```
 srun --exclusive ../Fortran/simpleMpiF90
 ```
-This command will create the MPI runtime environment need to run the parallel program. Passing the `--exclusive` flag will make sure that no other job will be run on the same node.
+This command will create the MPI runtime environment need to run the parallel program. Passing the `--exclusive` flag will make sure that no other job will be run on the same node - this can be useful for job performance, but it may also mean longer queuing times and less throughput.
 
-We can now submit the job using the command
+Submit the job using
 ```
 sbatch run_simplempif90.sl
 ```
-Similar to other schedulers, `stdout` and `stderr` are written into files `slurm-<job number>.out` and `slurm-<job number>.err`.
+Output from `stdout` and `stderr` will be once again written into files `slurm-<job number>.out` and `slurm-<job number>.err`.
 
 To check if your job is running, use the command
 ```
-squeue
+squeue -j <job_list> -u <user_list>
+squeue --jobs=<job_list> --user=<user_list>
 ```
+You can provide a list of job IDs and user names, which is useful when there are many jobs running. The output will show the job state and various basic job specs, such as time spent running, time left with respect to requested wallclock time (via `--time` option), the number of allocated nodes, and CPUs. Additional job information can be provided, consult the `squeue` man page to find out more.
+
 To cancel a job, use
 ```
 scancel <job id>
@@ -121,35 +132,6 @@ Jobs
 - $SLURM_ARRAY_JOB_ID (job id for the array)
 - $SLURM_ARRAY_TASK_ID (job array index value)
 
-### Standard job script directives
-
-```
-#!/bin/bash
-#SBATCH -J JobName
-#SBATCH -A nesi99999		# Project Account
-#SBATCH --time=08:00:00		# Walltime
-#SBATCH --mem-per-cpu=4096	# memory/cpu (in MB)
-#SBATCH --ntasks=2		# 2 tasks
-#SBATCH --cpus-per-task=4	# number of cores per task
-#SBATCH --nodes=1		# number of nodes
-#SBATCH --exclusive             # node should not be shared with other jobs
-```
-
-
-
-### Examples of submitting jobs
-
-Let's submit a first job via SLURM. We will do it using the `sbatch` command to interact with SLURM. Remember to replace [Project Account] with the actual project ID that you want to use.
-
-```
-sbatch -A [Project Account] -t 10 --wrap "echo hello world"
-
-```
-
-The options `-t` stands for *time* and sets a limit on the total run time of the job allocation. Note that each partition on which the jobs are run has its own time limit. If the set time limit exceeds the limit for the partition, the job will become "PENDING" (for more information on job statuses, see below).
-`--wrap` option means that the following string (in "") will be turned by SLURM in a simple shell script.
-
-
 ### Monitoring your work on the cluster
 
 We can monitor our job submissions using `squeue` command (which comes with many different options):
@@ -183,10 +165,6 @@ Will show us something like:
 ```
 
 The "MaxRSS" column reports the memory used during the job and is useful when trying to determine a sensible amount of memory to request in the submission script.
-
-### Job outputs
-
-
 
 ### SLURM scripts
 
@@ -234,17 +212,6 @@ sbatch --array=1-2 -A [project_code] run_array-analysis.sl
 
 ```
 sacct -j [jobid]
-```
-
-
-### Cancelling jobs
-
-```
-scancel [jobid]
-```
-
-```
-
 ```
 
 ### How to choose the right runtime environment

@@ -11,10 +11,10 @@ It is important to use the file structure according to its purpose to get best p
 | ----------- |:---------:|:------------:|:--------------:|:--------:|:-----:| --------------------------------------- |
 | Home        | Yes       | Low          | Low            | Personal | Yes   | Documentation, source code packages, …  |
 | Project     | Yes       | Low          | Medium         | Group    | Yes   | Analysis results, source code, file sharing, ... |
-| Nobackup    | No        | High         | Large          | Group    | No    | Raw model output - **old files may be "spring cleaned"** |
-| Nearline    | ---       | Medium       | ---            | Group    | Yes   | Staging file system for tape archival of research output |
+| Nobackup    | No        | High         | Large          | Group    | Yes   | Raw model output - **old files may be "spring cleaned"** |
+| Nearline    | To Tape   | Medium       | Large          | Group    | Yes   | Staging file system for tape archival of research output |
 
-The spring cleaning mechanism on the "Nobackup" file system will delete old files when space runs low. This avoids the need for a quota and gives users the flexibility to quickly access large amounts of space when needed. Details of the "spring cleaning" mechanism, such as deletion criteria and warning messages for users are currently being discussed.
+There may be a spring cleaning mechanism on the "Nobackup" file system that deletes old files when space runs low. This gives users the flexibility to quickly access large amounts of space when needed. Details of the "spring cleaning" mechanism, such as deletion criteria and warning messages for users are currently being discussed.
 
 ### NIWA operational users
 

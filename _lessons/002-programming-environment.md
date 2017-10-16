@@ -83,7 +83,11 @@ man crayftn
 man icc
 man g++
 ```
-for instance - don't forget to to load the corresponding programming environment first.
+for instance - don't forget to to load the corresponding programming environment first. Here are a few links to compiler documentation:
+
+* Cray Compiler Environment: [Cray Fortran v8.5](http://docs.cray.com/PDF/Cray_Fortran_Reference_Manual_85.pdf), [Cray C and C++ v8.5](http://docs.cray.com/PDF/Cray_C_and_Cplusplus_Reference_Manual_85.pdf)
+* Intel compilers: [Intel Fortran Compiler v17.0](https://software.intel.com/sites/default/files/managed/93/88/PDF%20Fortran%20Compiler%20UG%2017.0%3D1%3DSSG%202.0%20PDF%3Den-US.pdf), [Intel C and C++ Compiler v17.0](https://software.intel.com/sites/default/files/managed/08/ac/PDF%20C%2B%2B%20Compiler%20UG%2017.0%3D1%3DSSG%202.0%20PDF%3Den-US.pdf)
+* GNU compilers: [GCC C and C++ v4.9.4](https://gcc.gnu.org/onlinedocs/gcc-4.9.4/gcc.pdf), [GCC C and C++ v7.2.0](https://gcc.gnu.org/onlinedocs/gcc-7.2.0/gcc.pdf), [GNU Fortran v4.9.4](https://gcc.gnu.org/onlinedocs/gcc-4.9.4/gfortran.pdf), [GNU Fortran v7.2](https://gcc.gnu.org/onlinedocs/gcc-7.2.0/gfortran.pdf)
 
 The wrappers provide their own options, and a few options that are common accross programming environments. You can look at them using
 ```

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fitzroy to Kupe migration
+title: HPC3 Fitzroy to Kupe migration
 ---
 
 
@@ -54,3 +54,6 @@ Note that for the SLURM directives there must not be any space between # and SBA
 | Fitzroy                                           | Slurm                                           |
 |---------------------------------------------------|-------------------------------------------------|
 | poe                                               | srun                                            |
+
+
+[Download a printable cheat-sheet](https://wiki.auckland.ac.nz/download/attachments/63145549/jobdescription-LoadLevelertoSlurm.pdf?version=2&modificationDate=1395888661806&api=v2 )

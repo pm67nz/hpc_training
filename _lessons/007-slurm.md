@@ -87,66 +87,31 @@ To check if your job is running, use the command
 squeue -j <job_list> -u <user_list>
 squeue --jobs=<job_list> --user=<user_list>
 ```
-You can provide a list of job IDs and user names, which is useful when there are many jobs running. The output will show the job state and various basic job specs, such as time spent running, time left with respect to requested wallclock time (via `--time` option), the number of allocated nodes, and CPUs. Additional job information can be provided, consult the `squeue` man page to find out more.
-
-To cancel a job, use
-```
-scancel <job id>
-```
-
-## Resource management
-
-### Nodes and Job States
-
-Nodes
-
-- state (up/down/idle/allocated/mix/drained)
-
-Jobs
-
-- queued/pending and running
-- suspended/preempted
-- cancelled/completed/failed
-
-
-
-## Running a job
-
-### SLURM Commands
-
-
-- *sbatch* - submits a script job
-- *scancel* - cancels a running or pending job
-- *srun* - runs a command across nodes
-- sbcast Transfer file to a compute nodes allocated job
-- interactive - opens an interactive job session
-- sattach - connect stdin/out/err for an existing job or job step
-- squeue - displays the job queue
-
-### Commonly used SLURM variables
-
-- $SLURM_JOBID (job id)
-- $SLURM_JOB_NODELIST (nodes allocated for job)
-- $SLURM_NNODES (number of nodes)
-- $SLURM_SUBMIT_DIR (directory job was submitted from)
-- $SLURM_ARRAY_JOB_ID (job id for the array)
-- $SLURM_ARRAY_TASK_ID (job array index value)
-
-### Monitoring your work on the cluster
-
-We can monitor our job submissions using `squeue` command (which comes with many different options):
-
-```
-squeue -u your_username
-```
-
-And the output will look more or less like this:
+You can provide a list of job IDs and user names, which is useful when there are many jobs running. The output will look more or less like this:
 
 ```
    JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 61568899 merit_sho     wrap  apaw363 PD       0:00      1 (Resources)
 61568901 merit_sho     wrap  apaw363 PD       0:00      1 (Resources)
 61568970 merit_sho     wrap  apaw363 PD       0:00      1 (Resources)
+```
+
+The output shows the job state (column "ST") and various basic job specs, such as time spent running (column "TIME"), and the number of allocated nodes (column "NODES"). Additional job information can be provided, consult the `squeue` man page to find out more.
+
+Here is a list of the most important job states:
+
+| Short form | Long form | Meaning                                                                    |
+|------------|-----------|----------------------------------------------------------------------------|
+| PD         | Pending   | Job is queued and waiting for an allocation                                |
+| R          | Running   | Job is running on the HPC                                                  |
+| CA         | Cancelled | Job has been cancelled by user or sys admin                                |
+| CD         | Completed | All processes in the job finished successfully (with an exit code of zero) |
+| F          | Failed    | A process in the job failed (exit code not zero or other failure)          |
+| TO         | Timeout   | Job reached its time limit and was terminated                              |
+
+To cancel a job, use
+```
+scancel <job id>
 ```
 
 Another useful SLURM command is `sacct` which retrieves information about completed jobs. For example:
@@ -166,7 +131,32 @@ Will show us something like:
 
 The "MaxRSS" column reports the memory used during the job and is useful when trying to determine a sensible amount of memory to request in the submission script.
 
-### SLURM scripts
+### List of SLURM Commands
+
+Here is a list of commonly used SLURM commands:
+
+- *sbatch* - submits a script job
+- *scancel* - cancels a running or pending job
+- *srun* - runs a command across nodes
+- sbcast Transfer file to a compute nodes allocated job
+- interactive - opens an interactive job session
+- sattach - connect stdin/out/err for an existing job or job step
+- squeue - displays the job queue
+
+### Commonly used SLURM environment variables
+
+These environment variables can be used in SLURM submission scripts:
+
+- $SLURM_JOBID (job id)
+- $SLURM_JOB_NODELIST (nodes allocated for job)
+- $SLURM_NNODES (number of nodes)
+- $SLURM_SUBMIT_DIR (directory job was submitted from)
+- $SLURM_ARRAY_JOB_ID (job id for the array)
+- $SLURM_ARRAY_TASK_ID (job array index value)
+
+### More job examples
+
+Here are a few more examples for submitting jobs with SLURM.
 
 #### run_simple.sl
 
@@ -188,8 +178,6 @@ Output will be captured in the slurm output file
 sbatch -A project_code run_print-args.sl first second third
 ```
 
-
-
 #### run_array-analysis
 
 A script to demonstrate using a slurm array job to run an analysis in parallel on different input datasets
@@ -200,7 +188,6 @@ Output will be captured in the slurm output file
 ```
 sbatch -A project_code run_array-analysis.sl
 ```
-
 
 ```
 sbatch --array=1 -A [project_code] run_array-analysis.sl something.txt

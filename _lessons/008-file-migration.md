@@ -90,6 +90,8 @@ Here is an example of a Cylc task family that can be used for submitting tasks t
             --ntasks = 80
             --cpus-per-task = 2
         [[[environment]]]]
-            SLURM_EXCLUSIVE = ""
+            SLURM_EXCLUSIVE = ""    # Set --exclusive
+            OMP_NUMTHREADS = 2      # Needs to be set in addition to --cpus-per-task
+            OMP_STACKSIZE = 1g
 ```
 Note that Cylc does not accept directives without further parameters, such as `--exclusive``. These can be set using SLURM's environment variables as shown in the example.

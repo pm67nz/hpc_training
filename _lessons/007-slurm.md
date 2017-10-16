@@ -246,3 +246,29 @@ scancel [jobid]
 ```
 
 ```
+
+### How to choose the right runtime environment
+
+Kupe consists of different runtime environments. Here is some guidance for choosing the best environment for your requirements.
+
+#### Job Type
+
+|             | XC50 compute | CS500 multi-purpose | CS500 virtual lab |
+| ----------- |:------------:|:-------------------:|:-----------------:|
+| Interactive work (e.g., visualisation, file editing, data discovery ...) |:heavy_multiplication_x:|:heavy_multiplication_x:|:heavy_check_mark:| 
+| Non-interactive work (e.g., compute jobs, pre- and post-processing) |:heavy_check_mark:|:heavy_check_mark:| | 
+
+#### Job Size
+
+|             | XC50 compute | CS500 multi-purpose | CS500 virtual lab |
+| ----------- |:------------:|:-------------------:|:-----------------:|
+| Small jobs on a few cores | |:heavy_check_mark:|:heavy_check_mark:|
+| Medium jobs on up to 40 cores |:heavy_check_mark:|:heavy_check_mark:|(:heavy_check_mark:)|
+| Large jobs on > 40 cores |:heavy_check_mark:| | |
+
+#### IO and CLI tools
+
+|                    | XC50 compute | CS500 multi-purpose | CS500 virtual lab |
+| ------------------ |:------------:|:-------------------:|:-----------------:|
+| IO intensive jobs on few cores |:heavy_multiplication_x:|:heavy_check_mark:|:heavy_check_mark:|
+| Scripted jobs that need many CLI tools |:heavy_multiplication_x:|:heavy_check_mark:|:heavy_check_mark:|

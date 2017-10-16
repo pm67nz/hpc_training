@@ -22,8 +22,11 @@ FitzRoy data will be made available using the following paths:
 
 ### Translating your job scheduler Load Leveler scripts to SLURM
 
-As Kupe will use SLURM to manage submitted jobs, you will need to rewrite your scripts to make them compatible with the new job scheduler.
-Note that for the SLURM directives there must not be any space between # and SBATCH. SLURM directives must appear at the beginning of a submission script, otherwise they will be ignored.
+As Kupe will use SLURM to manage submitted jobs, you will need to rewrite your scripts to make them compatible with the new job scheduler. SLURM syntax is a bit more restrictive than LoadLeveler syntax:
+
+* For the SLURM directives there must not be any space between # and SBATCH
+* SLURM directives must appear at the beginning of a submission script, otherwise they will be ignored
+* There must not be white space around equal signs (e.g., `--job-name = myjob` will not work)
 
 **Important:** Kupe uses a default stacksize of 8192 kB on the XC50 compute nodes. Make sure to increase stacksize in your submission script using the command `ulimit -s <stack size>`, your program may crash with segmentation faults otherwise. Maximum stacksize can be requested using `ulimit -s unlimited`.
 
@@ -39,19 +42,19 @@ Note that for the SLURM directives there must not be any space between # and SBA
 
 | LoadLeveler                                       | Slurm                                           |
 |---------------------------------------------------|-------------------------------------------------|
-| #@ job_name = <job_name>                          | #SBATCH --job-name = <job_name>                 |
-| #@ account_no = <account_no>                      | #SBATCH --account = <account_no>                |
-| #@ wall_clock_limit = <hh:mm:ss>                  | #SBATCH --time <hh:mm:ss>                       |
-| #@ output = <output_file>                         | #SBATCH --output = <output_file>                |
-| #@ error = <error_file>                           | #SBATCH --error =  <error_file>                 |
-| #@ class = <class_name>                           | #SBATCH --partition = <partition_name>          |
+| #@ job_name = <job_name>                          | #SBATCH --job-name=<job_name>                   |
+| #@ account_no = <account_no>                      | #SBATCH --account=<account_no>                  |
+| #@ wall_clock_limit = <hh:mm:ss>                  | #SBATCH --time=<hh:mm:ss>                       |
+| #@ output = <output_file>                         | #SBATCH --output=<output_file>                  |
+| #@ error = <error_file>                           | #SBATCH --error=<error_file>                    |
+| #@ class = <class_name>                           | #SBATCH --partition=<partition_name>            |
 | #@ resources = ConsumableMemory(\<mem>gb)         | #SBATCH --mem-per-cpu=\<mem>G                   |
-| #@ nodes = <no_nodes>                             | #SBATCH --nodes = <no_nodes>                    |
-| #@ tasks_per_node = <no_ranks>                    | #SBATCH --ntasks-per-node = <no_ranks>          |
-| #@ parallel_threads = <no_threads>                | #SBATCH --cpus-per-task = <no_threads>          |
+| #@ nodes = <no_nodes>                             | #SBATCH --nodes=<no_nodes>                      |
+| #@ tasks_per_node = <no_ranks>                    | #SBATCH --ntasks-per-node=<no_ranks>            |
+| #@ parallel_threads = <no_threads>                | #SBATCH --cpus-per-task=<no_threads>            |
 | #@ node_usage = not_shared                        | #SBATCH --exclusive                             |
-| #@ requirements = (Feature==="build_node_name")   | #SBATCH --constraint = build_node_name          |
-| #@ network.MPI = <network_settings>               | #SBATCH --network = <network_settings>          |
+| #@ requirements = (Feature==="build_node_name")   | #SBATCH --constraint=build_node_name            |
+| #@ network.MPI = <network_settings>               | #SBATCH --network=<network_settings>            |
 | #@ job_type = parallel                            | NA                                              |
 | #@ queue                                          | NA                                              |
 

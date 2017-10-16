@@ -3,7 +3,7 @@ layout: post
 title:  HPC3 Programming Environment
 ---
 
-Please use `git clone` to download this repository, if you want to try out compiling codes yourself:
+Please use `git clone` to download this repository, if you want to try out compiling code yourself:
 
 ```
 git clone https://github.com/nesi/hpc_training.git
@@ -19,7 +19,7 @@ There are further subdirectories with the different examples that will be shown 
 
 ### Targeting a CPU
 
-A CPU target should be loaded before building any code. This means that you tell the compiler to use instructions that are understood by this particular CPU (or a younger CPU in the same family, such as Intel's x86 CPUs). Otherwise you will see a warning message from the Cray compiler driver whenever you try to compile code,
+A CPU target should be loaded before building any code. This means that you tell the compiler to use instructions that are understood by this particular CPU (or a younger CPU of the same family). Otherwise you will see a warning message from the Cray compiler driver whenever you try to compile code,
 
 ```
 No supported cpu target is set, CRAY_CPU_TARGET=x86-64 will be used.
@@ -42,9 +42,9 @@ cc -o simpleMpiC simpleMpi.c      # compile C code
 CC -o simpleMpiCxx simpleMpi.cxx  # compile C++ code
 ```
 
-Note that these wrappers are always the same, regardless of your choice of compiler (Cray, Intel, or GNU). The wrappers will ensure correct linking of your code with compiler runtime libraries, and with Cray-supported libraries (such as Cray's `libsci` scientific library, or netCDF). We will get to that topic later in this session.
+The wrappers will ensure correct linking of your code with compiler runtime libraries, and with Cray-supported libraries (such as Cray's `libsci` scientific library, or netCDF). We will get to that topic later in this session.
 
-There is also no need to invoke special compilers for MPI code or to apply special compiler options for code with OpenMP directives - use ftn, cc, and CC in all cases. 
+There is no need to invoke special compilers for MPI code or to apply special compiler options for code with OpenMP directives - use ```ftn```, ```cc```, and ```CC``` in all cases. 
 
 ### Programming environments
 
@@ -53,23 +53,28 @@ The default programming environment provides Cray's CCE (Cray Compiler Environme
 ```
 module swap PrgEnv-cray PrgEnv-intel
 ```
-to use the Intel compilers, or
+to use the _Intel_ compilers, or
 ```
 module swap PrgEnv-cray PrgEnv-gnu
 ```
-to use the GNU compilers.
+to use the _GNU_ compilers. Note that several GNU compiler versions are currently installed (gcc/4.9.3, gcc/5.3.0, gcc/6.1.0 and gcc/7.1.0) - you 
+switch between the different version by swapping the appropriate modules, e.g. 
 
-You should always invoke the ```ftn```, ```cc``` and ```CC``` compiler wrappers to ensure correct linking, regardless of the programming environment.
+```
+module swap gcc/4.9.3 gcc/7.1.0
+```
+
+You should _always_ invoke the ```ftn```, ```cc``` and ```CC``` compiler wrappers to ensure correct linking, regardless of the programming environment.
 
 Note that swapping programming environments will automatically swap Cray-provided libraries - but this will **not** be the case for libraries provided by NeSI or NIWA.
 
 ### Common compiler options
 
-Although the compiler drivers have a few options of their own, they will pass through any compiler options you set - this means that you simply set the exact same options that you would have used with the underlying compiler. For example, if you are using the `gfortran` compiler and wanted to activate compiler warnings and compiler optimisation, you would use the following command:
+Although the compiler wrappers ```ftn```, ```cc``` and ```CC``` have a few options of their own, they will pass through any additional compiler options to the underlying compiler. For example, if you are using the `gfortran` compiler and wanted to activate compiler warnings (-Wall) and aggressive compiler optimisation (-O3), you would use the following command:
 
 ```
 module swap PrgEnv-cray PrgEnv-gnu
-ftn -Wall -O2 -o simpleMpiF90 simpleMpi.f90
+ftn -Wall -O3 -o simpleMpiF90 simpleMpi.f90
 ```
 
 To see the compiler options that are specific to a compiler, type

@@ -6,7 +6,19 @@ title: HPC3 Fitzroy to Kupe migration
 
 ### Files migration
 
-All FitzRoy users' files  will be migrated to Kupe where each user will have their allocated home space.
+All FitzRoy users' files have been migrated to Kupe, and synchronisation will continue until FitzRoy shuts down. **Important: To ensure data consistency and integrity, users must not write to the migrated file spaces listed below until synchronisation stops!** Temporary directories will be made available in the meantime. All migrated files are nonetheless available for read access.
+
+#### Mapping of file spaces between FitzRoy and Kupe
+
+FitzRoy data will be made available using the following paths:
+
+| Path on Kupe                | Path on Fitzroy            |
+|-----------------------------|----------------------------|
+| /nesi/home/\<user name>     | /hpcf/home/\<user name>    |
+| /nesi/project/\<user name>  | -- no equivalent --        |
+| /nesi/nobackup/\<user name> | /hpcf/working/\<user name> |
+| /nesi/nearline/\<user name> | /hpcf/data/\<user name>    |
+
 
 ### Translating your job scheduler Load Leveler scripts to SLURM
 
@@ -30,13 +42,13 @@ Note that for the SLURM directives there must not be any space between # and SBA
 | #@ wall_clock_limit = <hh:mm:ss>                  | #SBATCH -t <hh:mm:ss>                           |
 | #@ output = <output_file>                         | #SBATCH -o <output_file>                        |
 | #@ error = <error_file>                           | #SBATCH -e <error_file>                         |
-| #@ class = <partition>                            | #SBTACH -q <partition>                          |
-| #@ resources = ConsumableMemory(<mem>gb)          | #SBTACH --mem-per-cpu=<mem>gb                   |
+| #@ class = <partition>                            | #SBATCH -q <partition>                          |
+| #@ resources = ConsumableMemory(<mem>gb)          | #SBATCH --mem-per-cpu=<mem>gb                   |
 | #@ nodes = <no_nodes>                             | #SBATCH -N <no_nodes>                           |
 | #@ tasks_per_node = <no_ranks>                    | #SBATCH --tasks-per-node = <no_ranks>           |
 | #@ parallel_threads = <no_threads>                | #SBATCH --cpus-per-task = <no_threads>          |
 | #@ node_usage = not_shared                        | #SBATCH --exclusive                             |
-| #@ requirements = (Feature==="build_node_name")   | #SBTACH -C build_node_name                      |
+| #@ requirements = (Feature==="build_node_name")   | #SBATCH -C build_node_name                      |
 | #@ network.MPI = <mpi_settings>                   | NA                                              |
 | #@ job_type = parallel                            | NA                                              |
 | #@ queue                                          | NA                                              |

@@ -180,25 +180,12 @@ sbatch -A project_code run_print-args.sl first second third
 
 #### run_array-analysis
 
-A script to demonstrate using a slurm array job to run an analysis in parallel on different input datasets
-
-Output will be captured in the slurm output file
-
+A script to demonstrate using a slurm array job to run an analysis in parallel on different input datasets. Note that it is highly recommended to use the [Cylc workflow engine](https://cylc.github.io/cylc) if you need to run a job with complex task dependencies.
 
 ```
 sbatch -A project_code run_array-analysis.sl
-```
-
-```
 sbatch --array=1 -A [project_code] run_array-analysis.sl something.txt
-```
-
-```
 sbatch --array=1-2 -A [project_code] run_array-analysis.sl
-```
-
-```
-sacct -j [jobid]
 ```
 
 ### How to choose the right runtime environment
@@ -217,7 +204,7 @@ Kupe consists of different runtime environments. Here is some guidance for choos
 |             | XC50 compute | CS500 multi-purpose | CS500 virtual lab |
 | ----------- |:------------:|:-------------------:|:-----------------:|
 | Small jobs on a few cores | |:heavy_check_mark:|:heavy_check_mark:|
-| Medium jobs on up to 40 cores |:heavy_check_mark:|:heavy_check_mark:|(:heavy_check_mark:)|
+| Medium jobs on up to 40 cores |:heavy_check_mark:|:heavy_check_mark:| |
 | Large jobs on > 40 cores |:heavy_check_mark:| | |
 
 #### IO and CLI tools

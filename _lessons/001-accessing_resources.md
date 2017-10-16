@@ -8,7 +8,7 @@ title: HPC3 - Accessing system resources
 If you are logging in for the first time to Kupe, you will need to set up your password using [NeSI User Portal](https://my.nesi.org.nz/accounts).
 
 1. Log in to the NeSI User Portal using your institutional credentials via Tuakiri.
-2. Select "My account" tab.
+2. Click on "Account" link in the top-right corner.
 3. Set password for Kupe (HPC3).
 
 Connecting to the HPC requires two-factor authentication at all times, your password, and an additional factor. These additional factors can be:
@@ -36,7 +36,7 @@ You will need a terminal program to log into Kupe:
 ```
    ​ssh -X your_username@kupe.niwa.co.nz
 ```
-If you use a MobaXterm or Putty, start a new ssh session with remote host `kupe.niwa.co.nz` and username `your_username`, and activate "X11 forwarding".
+If you use MobaXterm or Putty, start a new ssh session with remote host `kupe.niwa.co.nz` and username `your_username`, and activate "X11 forwarding".
 
 2. Enter your password (the one you set up in NeSI User Portal)
 

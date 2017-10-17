@@ -74,7 +74,7 @@ The program is then launched using the `srun` command:
 ```
 srun --exclusive ../Fortran/simpleMpiF90
 ```
-This command will create the MPI runtime environment need to run the parallel program. Passing the `--exclusive` flag will make sure that each processor is entirely dedicated to a job step - this can be useful for job performance, but it may also mean longer queuing times and less throughput. Note that ```#SBATCH --exclusive```, as a batch directive, has a different meaning as it enforces that only _one job_ is run per node. 
+This command will create the MPI runtime environment need to run the parallel program. Passing the `--exclusive` flag will make sure that no other job will be run on the same node - this can be useful for job performance, but it may also mean longer queuing times and less throughput.
 
 Submit the job using
 ```
@@ -202,12 +202,13 @@ no symbol - works but not ideal
 
 #### Job Type
 
-|                                                                   | XC50 compute           | CS500 multi-purpose    | CS500 virtual lab |
-|-------------------------------------------------------------------|:----------------------:|:----------------------:|:-----------------:|
-|Interactive work (e.g., visualisation, editing, data discovery ...)|:heavy_multiplication_x:|:heavy_multiplication_x:|:heavy_check_mark: | 
-|Non-interactive work (e.g., compute jobs, pre- and post-processing)|:heavy_check_mark:      |:heavy_check_mark:      |                   | 
+|                                                            | XC50 compute           | CS500 multi-purpose    | CS500 virtual lab | elogin node |
+|------------------------------------------------------------|:----------------------:|:----------------------:|:-----------------:|:------------|
+|Interactive work: building code                             |:heavy_multiplication_x:|                        |                   | :heavy_check_mark: |
+|Interactive work: visualisation, editing, data discovery ...|:heavy_multiplication_x:|:heavy_multiplication_x:|:heavy_check_mark: |       |
+|Non-interactive work: compute jobs, script-based pre- and post-processing|:heavy_check_mark:|:heavy_check_mark:|:heavy_multiplication_x:|:heavy_multiplication_x:|
 
-#### Job Size
+#### Job Size: Cores
 
 |                             | XC50 compute     | CS500 multi-purpose    | CS500 virtual lab      |
 |-----------------------------|:----------------:|:----------------------:|:----------------------:|
@@ -215,9 +216,17 @@ no symbol - works but not ideal
 | Medium jobs on a few cores  |:heavy_check_mark:|:heavy_check_mark:      |                        |
 | Large jobs on > 40 cores    |:heavy_check_mark:|:heavy_multiplication_x:|:heavy_multiplication_x:|
 
+#### Job Size: Memory
+
+TBD
+
+#### Job Size: Runtime
+
+TBD
+
 #### IO and CLI tools
 
 |                                        | XC50 compute           | CS500 multi-purpose | CS500 virtual lab |
 |----------------------------------------|:----------------------:|:-------------------:|:-----------------:|
-| IO intensive jobs on few cores         |:heavy_multiplication_x:|:heavy_check_mark:   |:heavy_check_mark: |
+| IO intensive jobs on few cores (e.g., EDA) |:heavy_multiplication_x:|:heavy_check_mark:   |:heavy_check_mark: |
 | Scripted jobs that need many CLI tools |:heavy_multiplication_x:|:heavy_check_mark:   |:heavy_check_mark: |

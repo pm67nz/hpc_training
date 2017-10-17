@@ -212,8 +212,8 @@ no symbol - works but not ideal
 
 |                             | XC50 compute     | CS500 multi-purpose    | CS500 virtual lab      |
 |-----------------------------|:----------------:|:----------------------:|:----------------------:|
-| Small jobs on a single core |                  |:heavy_check_mark:      |:heavy_check_mark:      |
-| Medium jobs on a few cores  |:heavy_check_mark:|:heavy_check_mark:      |                        |
+| Small jobs on few cores     |                  |:heavy_check_mark:      |:heavy_check_mark:      |
+| Medium jobs 10-40 cores     |:heavy_check_mark:|:heavy_check_mark:      |                        |
 | Large jobs on > 40 cores    |:heavy_check_mark:|:heavy_multiplication_x:|:heavy_multiplication_x:|
 
 #### Job Size: Memory

@@ -72,9 +72,9 @@ Each task may use up to 1GB of memory, otherwise it will be cancelled.
 
 The program is then launched using the `srun` command:
 ```
-srun --exclusive ../Fortran/simpleMpiF90
+srun ../Fortran/simpleMpiF90
 ```
-This command will create the MPI runtime environment need to run the parallel program. Passing the `--exclusive` flag will make sure that no other job will be run on the same node - this can be useful for job performance, but it may also mean longer queuing times and less throughput.
+This command will create the MPI runtime environment need to run the parallel program.
 
 Submit the job using
 ```

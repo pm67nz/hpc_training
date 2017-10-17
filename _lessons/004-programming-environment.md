@@ -34,7 +34,7 @@ The resulting executable will not run on older processors, such as the Broadwell
 
 ### Compiler Drivers
 
-The Cray environment provides compiler drivers, which should be used to compile Fortran, C, and C++ code:
+The Cray environment provides compiler drivers (wrapper scripts for the actual compilers), which should be used to compile Fortran, C, and C++ code:
 
 ```
 ftn -o simpleMpiF90 simpleMpi.f90 # compile Fortran code
@@ -42,7 +42,7 @@ cc -o simpleMpiC simpleMpi.c      # compile C code
 CC -o simpleMpiCxx simpleMpi.cxx  # compile C++ code
 ```
 
-The wrappers will ensure correct linking of your code with compiler runtime libraries, and with Cray-supported libraries (such as Cray's `libsci` scientific library, or netCDF). We will get to that topic later in this session.
+The drivers will ensure correct linking of your code with compiler runtime libraries, and with Cray-supported libraries (such as Cray's `libsci` scientific library, or netCDF). We will get to that topic later in this session.
 
 There is no need to invoke special compilers for MPI code or to apply special compiler options for code with OpenMP directives - use ```ftn```, ```cc```, and ```CC``` in all cases. 
 
@@ -89,7 +89,7 @@ for instance - don't forget to to load the corresponding programming environment
 * Intel compilers: [Intel Fortran Compiler v17.0](https://software.intel.com/sites/default/files/managed/93/88/PDF%20Fortran%20Compiler%20UG%2017.0%3D1%3DSSG%202.0%20PDF%3Den-US.pdf), [Intel C and C++ Compiler v17.0](https://software.intel.com/sites/default/files/managed/08/ac/PDF%20C%2B%2B%20Compiler%20UG%2017.0%3D1%3DSSG%202.0%20PDF%3Den-US.pdf)
 * GNU compilers: [GCC C and C++ v4.9.4](https://gcc.gnu.org/onlinedocs/gcc-4.9.4/gcc.pdf), [GCC C and C++ v7.2.0](https://gcc.gnu.org/onlinedocs/gcc-7.2.0/gcc.pdf), [GNU Fortran v4.9.4](https://gcc.gnu.org/onlinedocs/gcc-4.9.4/gfortran.pdf), [GNU Fortran v7.2](https://gcc.gnu.org/onlinedocs/gcc-7.2.0/gfortran.pdf)
 
-The wrappers provide their own options, and a few options that are common accross programming environments. You can look at them using
+The drivers provide their own options, and a few options that are common accross programming environments. You can look at them using
 ```
 man ftn
 man cc

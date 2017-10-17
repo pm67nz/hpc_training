@@ -10,14 +10,27 @@ All FitzRoy users' files have been migrated to Kupe, and synchronisation will co
 
 #### Mapping of file spaces between FitzRoy and Kupe
 
-FitzRoy data will be made available using the following paths:
+FitzRoy data will be made available using the paths listed below.
 
-| Path on Kupe                           | Path on Fitzroy            |
+##### Research Users
+
+| Path on Kupe                           | Path on FitzRoy            |
 |----------------------------------------|----------------------------|
 | /nesi/home/\<user name>                | /hpcf/home/\<user name>    |
 | /nesi/project/\<project name>          | -- no equivalent --        |
 | /nesi/nobackup/\<user or project name> | /hpcf/working/\<user name> |
 | -- no direct access --                 | /hpcf/data/\<user name>    |
+
+##### Operational Users
+
+During migration, file paths will be the same on FitzRoy and on Kupe (e.g., `/oper/ecoconnect/ecoconnect_oper`). A new model will be implemented in the near future, a recommendation is listed below.
+
+| Path on Kupe | Path on FitzRoy                    |
+|--------------|------------------------------------|
+| /oper/X      | /oper/ecoconnect/ecoconnect_oper   |
+| /test/X      | /test/ecoconnect/ecoconnect_test   |
+| /devel/X     | /devel/ecoconnect/ecoconnect_devel |
+| /admin/x     | /oper/admin/ecoconnect_admin       |
 
 ### Translating your job scheduler Load Leveler scripts to SLURM
 

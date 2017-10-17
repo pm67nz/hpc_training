@@ -29,7 +29,7 @@ You can set up Google Authenticator on the NeSI User Portal:
 You will need a terminal program to log into Kupe:
 
 - Windows: MobaXterm, Windows 10 bash, Putty
-- MacOS X: Terminal app
+- MacOS X: Terminal app, iTerm2
 - Linux: Terminal app
 
 1. In order to log in to Kupe (HPC3), open the terminal program on your local machine and connect using `ssh`.

@@ -20,7 +20,7 @@ There may be a spring cleaning mechanism on the "Nobackup" file system that dele
 
 ### NIWA operational users
 
-The file structue is completely separate to ensure performance and reliability, research users will not have access to it.
+The file structure is completely separate to ensure performance and reliability, research users will not have access to it.
 
 | File Space | Total Capacity |
 |------------|---------------:|

@@ -45,7 +45,7 @@ You should now find an output file named `slurm-<job ID>.out` that contains stdo
 
 Here is another simple example. Build the Fortran MPI program in the `code/Fortran` directory first, if you haven't done so already:
 ```
-ftn -o simpleMpiF90 simpleMpi.f90
+ftn -o simpleMpi simpleMpi.f90
 ```
 Then change to the `code/SLURM` directory and have a look at the file `run_simplempif90.sl`:
 ```
@@ -72,7 +72,7 @@ Each task may use up to 1GB of memory, otherwise it will be cancelled.
 
 The program is then launched using the `srun` command:
 ```
-srun ../Fortran/simpleMpiF90
+srun ../Fortran/simpleMpi
 ```
 This command will create the MPI runtime environment need to run the parallel program.
 

@@ -37,9 +37,9 @@ The resulting executable will not run on older processors, such as the Broadwell
 The Cray environment provides compiler drivers (wrapper scripts for the actual compilers), which should be used to compile Fortran, C, and C++ code:
 
 ```
-ftn -o simpleMpiF90 simpleMpi.f90 # compile Fortran code
-cc -o simpleMpiC simpleMpi.c      # compile C code
-CC -o simpleMpiCxx simpleMpi.cxx  # compile C++ code
+ftn -o simpleMpi simpleMpi.f90 # compile Fortran code
+cc -o simpleMpi simpleMpi.c    # compile C code
+CC -o simpleMpi simpleMpi.cxx  # compile C++ code
 ```
 
 The drivers will ensure correct linking of your code with compiler runtime libraries, and with Cray-supported libraries (such as Cray's `libsci` scientific library, or netCDF). We will get to that topic later in this session.
@@ -74,7 +74,7 @@ Although the compiler drivers ```ftn```, ```cc``` and ```CC``` have a few option
 
 ```
 module swap PrgEnv-cray PrgEnv-gnu
-ftn -Wall -O3 -o simpleMpiF90 simpleMpi.f90
+ftn -Wall -O3 -o simpleMpi simpleMpi.f90
 ```
 
 To see the compiler options that are specific to a compiler, type

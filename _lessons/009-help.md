@@ -9,7 +9,6 @@ NeSI provides user documentation at [support.nesi.org.nz](https://support.nesi.o
 
 NIWA operations users:
 * Create a ticket on NIWA's JIRA ticket system
-* Or send an email to HPC admin
 
 NeSI users: 
 * Send an [email](mailto:support@nesi.org.nz) to the NeSI Team

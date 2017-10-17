@@ -74,7 +74,7 @@ The program is then launched using the `srun` command:
 ```
 srun --exclusive ../Fortran/simpleMpiF90
 ```
-This command will create the MPI runtime environment need to run the parallel program. Passing the `--exclusive` flag will make sure that no other job will be run on the same node - this can be useful for job performance, but it may also mean longer queuing times and less throughput.
+This command will create the MPI runtime environment need to run the parallel program. Passing the `--exclusive` flag will make sure that each processor is entirely dedicated to a job step - this can be useful for job performance, but it may also mean longer queuing times and less throughput. Note that ```#SBATCH --exclusive```, as a batch directive, has a different meaning as it enforces that only _one job_ is run per node. 
 
 Submit the job using
 ```

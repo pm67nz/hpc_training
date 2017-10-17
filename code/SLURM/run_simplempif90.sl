@@ -7,4 +7,4 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=1G
 
-srun --exclusive ../Fortran/simpleMpiF90
+srun ../Fortran/simpleMpiF90

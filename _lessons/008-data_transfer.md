@@ -14,7 +14,7 @@ For small amounts of data, utilities such as SecureCopy (`scp`) can be used. `sc
  * [Globus Auth](https://docs.globus.org/api/auth/)
  * [Globus Transfer API](https://docs.globus.org/api/transfer/)
 
-There is a [Software Development Kit (SDK) in Python to work with the API.](http://globus-sdk-python.readthedocs.io/en/latest/)
+There is a [Software Development Kit (SDK) in Python](http://globus-sdk-python.readthedocs.io/en/latest/) to work with the API.
 
 ### Automatic transfer between HPC sites
 

@@ -9,7 +9,7 @@ For small amounts of data, utilities such as SecureCopy (`scp`) can be used. `sc
 
 ### Transferring large amounts of data (500GB or more)
 
-[Globus](https://www.globus.org) provides a fast file transfer service that is suitable for large data volumes. Globus requires two endpoints, on at your institution, and on the HPC. Data transfer sessions can be set up and monitored on the Global webpage. Globus also provides APIs:
+[Globus](https://www.globus.org) provides a fast file transfer service that is suitable for large data volumes. Globus requires two endpoints, on at your institution, and on the HPC. Data transfer sessions can be set up and monitored on the Globus webpage. Globus also provides APIs:
 
  * [Globus Auth](https://docs.globus.org/api/auth/)
  * [Globus Transfer API](https://docs.globus.org/api/transfer/)

@@ -12,13 +12,12 @@ All FitzRoy users' files have been migrated to Kupe, and synchronisation will co
 
 FitzRoy data will be made available using the following paths:
 
-| Path on Kupe                   | Path on Fitzroy            |
-|--------------------------------|----------------------------|
-| /nesi/home/\<user name>        | /hpcf/home/\<user name>    |
-| /nesi/project/\<project name>  | -- no equivalent --        |
-| /nesi/nobackup/\<user name>    | /hpcf/working/\<user name> |
-| /nesi/nearline/\<user name>    | /hpcf/data/\<user name>    |
-
+| Path on Kupe                           | Path on Fitzroy            |
+|----------------------------------------|----------------------------|
+| /nesi/home/\<user name>                | /hpcf/home/\<user name>    |
+| /nesi/project/\<project name>          | -- no equivalent --        |
+| /nesi/nobackup/\<user or project name> | /hpcf/working/\<user name> |
+| no direct access                       | /hpcf/data/\<user name>    |
 
 ### Translating your job scheduler Load Leveler scripts to SLURM
 

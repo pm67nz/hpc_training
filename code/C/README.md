@@ -32,4 +32,4 @@ EBROOTGSL=/mnt/FS4MB/NESINIWA/n17755/easybuild/software/GSL/2.4-CrayGNU-2017.06
 cc -I$EBROOTGSL/include -o gsl_statistics_example gsl_statistics_example.c -L$EBROOTGSL/lib -lgsl
 ```
 
-Note: the path ```/mnt/FS4MB/NESINIWA/n17755/easybuild/software/GSL/2.4-CrayGNU-2017.06``` can be obtained by typing ```module show GSL```. Also the second method allows you to mix the GNU compilers with either Cray of Intel, which works for C but typically not Fortran programs.
+Note: the path ```/mnt/FS4MB/NESINIWA/n17755/easybuild/software/GSL/2.4-CrayGNU-2017.06``` can be obtained by typing ```module show GSL```. Also the second method allows you to mix the GNU compilers with either Cray of Intel, which works for C but typically not for Fortran programs.

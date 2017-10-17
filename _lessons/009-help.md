@@ -14,3 +14,11 @@ NeSI users:
 * Send an [email](mailto:support@nesi.org.nz) to the NeSI Team
 
 If you want to ask about training, please send us an [email](mailto:training@nesi.orb.nz).
+
+Below is a rough timeline for each functionality on Kupe.
+
+Functionality       | Ready when            |
+--------------------|-----------------------|
+Multi-purpose nodes | After 20 October 2017 |
+Slurm               | End of October 2017   | 
+Virtual Labs        | End of October 2017   |

@@ -17,8 +17,8 @@ If you want to ask about training, please send us an [email](mailto:training@nes
 
 Below is a rough timeline for each functionality on Kupe.
 
-Functionality       | Ready when            |
---------------------|-----------------------|
-Multi-purpose nodes | After 20 October 2017 |
-Slurm               | End of October 2017   | 
-Virtual Labs        | End of October 2017   |
+Functionality                 | Ready when            |
+------------------------------|-----------------------|
+Multi-purpose nodes available | After 20 October 2017 |
+Slurm configuration           | After 23 October 2017 | 
+Virtual Labs available        | After 25 October 2017 |

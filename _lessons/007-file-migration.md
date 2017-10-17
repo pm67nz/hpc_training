@@ -25,12 +25,12 @@ FitzRoy data will be made available using the paths listed below.
 
 During migration, file paths will be the same on FitzRoy and on Kupe (e.g., `/oper/ecoconnect/ecoconnect_oper`). A new model will be implemented in the near future, a recommendation is listed below.
 
-| Path on Kupe | Path on FitzRoy                    |
-|--------------|------------------------------------|
-| /oper/X      | /oper/ecoconnect/ecoconnect_oper   |
-| /test/X      | /test/ecoconnect/ecoconnect_test   |
-| /devel/X     | /devel/ecoconnect/ecoconnect_devel |
-| /admin/x     | /oper/admin/ecoconnect_admin       |
+| Path on Kupe      | Path on FitzRoy                    |
+|-------------------|------------------------------------|
+| /oper/ecoconnect  | /oper/ecoconnect/ecoconnect_oper   |
+| /test/ecoconnect  | /test/ecoconnect/ecoconnect_test   |
+| /devel/ecoconnect | /devel/ecoconnect/ecoconnect_devel |
+| /admin/ecoconnect | /oper/admin/ecoconnect_admin       |
 
 ### Translating your job scheduler Load Leveler scripts to SLURM
 

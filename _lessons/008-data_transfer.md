@@ -7,7 +7,7 @@ title: HPC3 Data storage and transfer
 
 For small amounts of data, utilities such as SecureCopy (`scp`) can be used. `scp` should be readily available on a terminal on Linux and MacOS, or via [WinSCP](https://winscp.net/eng/download.php) and [MobaXterm](https://mobaxterm.mobatek.net) on Windows. Note that two-factor authentication will be required for file transfer sessions.
 
-### Transferring large amounts of data
+### Transferring large amounts of data (500GB or more)
 
 [Globus](https://www.globus.org) provides a fast file transfer service that is suitable for large data volumes. Globus requires two endpoints, on at your institution, and on the HPC. Data transfer sessions can be set up and monitored on the Global webpage. Globus also provides APIs:
 

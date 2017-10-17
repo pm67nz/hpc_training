@@ -16,7 +16,7 @@ Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Sup
    - Same Intel Xeon Gold 6148 SKL processor as compute nodes
    - 768 GB of RAM per node
    - 2 nodes with Nvidia Tesla P100 GPGPUs
-   - Virtualised (one or more virtual machines share resources on each node)
+   - Some are virtualised (several virtual machines share resources on each node)
 * Storage: IBM Spectrum Scale (formerly GPFS)
 
 

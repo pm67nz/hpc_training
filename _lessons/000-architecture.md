@@ -11,8 +11,12 @@ Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Sup
 #### Compute Hardware:
 * 104 XC50 compute nodes
    - 2x Intel Xeon Gold 6148 2.4 GHz processor with 20 physical cores each (total of 40 physical cores per node)
+   - 96 GB of RAM per node
 * 11 CS500 nodes
    - Same Intel Xeon Gold 6148 SKL processor as compute nodes
+   - 768 GB of RAM per node
+   - 2 nodes with Nvidia Tesla P100 GPGPUs
+   - Virtualised (one or more virtual machines share resources on each node)
 * Storage: IBM Spectrum Scale (formerly GPFS)
 
 
@@ -28,27 +32,18 @@ If you are interested in learning more about the hardware, please find the detai
 * 2 eLogin nodes
    - Same Intel Xeon Gold 6148 SKL processor as compute nodes (no cross-compilation needed!)
    - Native access to Spectrum Scale filesystems
-   - Lots of memory
    - Used for building codes, submitting jobs, ...
    - Run on a full version of SLES
 * 11 CS500 nodes
-   - Same Intel Xeon Gold 6148 SKL processor as compute nodes (no cross-compilation needed!)
-   - Some nodes include a Nvidia Tesla P100 GPGPU
    - Native access to Spectrum Scale filesystems (ideal for IO-intensive jobs)
-   - Multi-Purpose nodes for running batch jobs, e.g., preprocessing or postprocessing of HPC jobs (no interactive access)
-   - Virtual Lab nodes for interactive work with remote desktop capability
-   - Nodes will be accessible as virtual machines
+   - 5 multi-purpose nodes for running batch jobs, e.g., preprocessing or postprocessing of HPC jobs (no interactive access)
+   - 6 virtual lab nodes for interactive work with remote desktop capability
+   - One multi-purpose node and one virtual lab node has a Nvidia Tesla P100 GPGPU
    - Run a full version of CentOS 7
 * 4 CS400 nodes
    - Shared Service nodes with Broadwell CPUs
    - Most are not for user access
 * 1 Management node with Broadwell CPUs
-* Multipurpose nodes
-   - non-interactive worker nodes for batch processing of data as part of pre-processing and post-processing jobs for the HPC
-* VirtualLab nodes
-   - interactive environments, persistent virtual workstations, with access to the shared storage
-   - enable job submission to the Multi-Purpose nodes and the local HPC(s)
-   - controlled by NIWA.
 
 #### Storage
 * Dedicated cluster for the Shared Service nodes

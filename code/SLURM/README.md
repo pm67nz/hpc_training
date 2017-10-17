@@ -5,7 +5,7 @@
 
  2. Compile ```../Fortran/simpleMpiF90```, see ```../Fortran/README.md```.
 
- 3. Submit the jobs using the ```sbatch``` command.
+ 3. Submit the jobs using the ```sbatch``` command. Note that ```run_array-analysis.sl``` takes a file argument, e.g. ```../../data/inflammation-01.csv```.
 
  4. Monitor the jobs with the ```squeue``` command.
 

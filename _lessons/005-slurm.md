@@ -192,6 +192,14 @@ sbatch --array=1-2 -A [project_code] run_array-analysis.sl
 
 Kupe consists of different runtime environments. Here is some guidance for choosing the best environment for your requirements.
 
+Symbols:
+
+:heavy_check_mark: - best suited for this job type
+
+:heavy_multiplication_x: - not suitable for this job type
+
+no symbol - works but not ideal
+
 #### Job Type
 
 |                                                                   | XC50 compute           | CS500 multi-purpose    | CS500 virtual lab |

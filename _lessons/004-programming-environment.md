@@ -32,9 +32,9 @@ module load craype-x86-skylake
 ```
 The resulting executable will not run on older processors, such as the Broadwell family which is used for the upcoming HPC1. Codes will either crash with an "illegal instruction" error, or display an error message if built with an Intel compiler.
 
-### Compiler Wrappers
+### Compiler Drivers
 
-The Cray environment provides compiler wrappers, which should be used to compile Fortran, C, and C++ code:
+The Cray environment provides compiler drivers, which should be used to compile Fortran, C, and C++ code:
 
 ```
 ftn -o simpleMpiF90 simpleMpi.f90 # compile Fortran code
@@ -64,13 +64,13 @@ switch between the different version by swapping the appropriate modules, e.g.
 module swap gcc/4.9.3 gcc/7.1.0
 ```
 
-You should _always_ invoke the ```ftn```, ```cc``` and ```CC``` compiler wrappers to ensure correct linking, regardless of the programming environment.
+You should _always_ invoke the ```ftn```, ```cc``` and ```CC``` compiler drivers to ensure correct linking, regardless of the programming environment.
 
 Note that swapping programming environments will automatically swap Cray-provided libraries - but this will **not** be the case for libraries provided by NeSI or NIWA.
 
 ### Common compiler options
 
-Although the compiler wrappers ```ftn```, ```cc``` and ```CC``` have a few options of their own, they will pass through any additional compiler options to the underlying compiler. For example, if you are using the `gfortran` compiler and wanted to activate compiler warnings (-Wall) and aggressive compiler optimisation (-O3), you would use the following command:
+Although the compiler drivers ```ftn```, ```cc``` and ```CC``` have a few options of their own, they will pass through any additional compiler options to the underlying compiler. For example, if you are using the `gfortran` compiler and wanted to activate compiler warnings (-Wall) and aggressive compiler optimisation (-O3), you would use the following command:
 
 ```
 module swap PrgEnv-cray PrgEnv-gnu

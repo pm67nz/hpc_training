@@ -3,6 +3,9 @@ layout: post
 title: Overview of Kupe architecture
 ---
 
+## Platform Overview
+
+![alt text](https://github.com/nesi/hpc_training/blob/gh-pages/Kupe_Overview.png "Kupe building blocks and network connections")
 
 ## Architecture
 
@@ -19,10 +22,9 @@ Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Sup
    - Some are virtualised (several virtual machines share resources on each node)
 * Storage: IBM Spectrum Scale (formerly GPFS)
 
-
 If you are interested in learning more about the hardware, please find the details below.
 
-##### More hardware details:
+#### More hardware details:
 * 104 XC50 compute nodes
    - 2-way hyperthreading with a total of 80 logical cores per node
    - Cray Aries interconnect (low-latency network, used by MPI jobs, IO, ...)

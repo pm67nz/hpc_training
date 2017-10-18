@@ -44,7 +44,20 @@ CC -o simpleMpi simpleMpi.cxx  # compile C++ code
 
 The drivers will ensure correct linking of your code with compiler runtime libraries, and with Cray-supported libraries (such as Cray's `libsci` scientific library, or netCDF). We will get to that topic later in this session.
 
-There is no need to invoke special compilers for MPI code or to apply special compiler options for code with OpenMP directives - use ```ftn```, ```cc```, and ```CC``` in all cases. 
+There is no need to invoke special compilers for MPI code or to apply special compiler options for code with OpenMP directives - use ```ftn```, ```cc```, and ```CC``` in all cases.
+
+Note that running an MPI code on the build (`elogin`) node using
+```
+./simpleMpi
+```
+will fail with an error message, as there is no MPI runtime environment:
+```
+[Wed Oct 18 02:00:14 2017] [c0-0c0s3n1] Fatal error in MPI_Init: Other MPI error, error stack:
+MPIR_Init_thread(537):
+MPID_Init(247).......: channel initialization failed
+MPID_Init(636).......:  PMI2 init failed: 1
+```
+SLURM offers an `mpiexec` command that submits your program to the compute nodes on the fly, but this may not be supported in the future.
 
 ### Programming environments
 
@@ -58,7 +71,7 @@ to use the _Intel_ compilers, or
 module swap PrgEnv-cray PrgEnv-gnu
 ```
 to use the _GNU_ compilers. Note that several GNU compiler versions are currently installed (gcc/4.9.3, gcc/5.3.0, gcc/6.1.0 and gcc/7.1.0) - you 
-switch between the different version by swapping the appropriate modules, e.g. 
+switch between the different version by swapping the appropriate modules, e.g.,
 
 ```
 module swap gcc/4.9.3 gcc/7.1.0

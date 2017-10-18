@@ -7,6 +7,8 @@ title: Overview of Kupe architecture
 
 ![alt text](https://github.com/nesi/hpc_training/blob/gh-pages/Kupe_Overview.png "Kupe building blocks and network connections")
 
+The diagram illustrates major building blocks and network connections on Kupe relevant to users. Note that there are far more XC50 and CS500 nodes on Kupe than shown here. Follow the blue network connections for user-accessible nodes. Native Spectrum Scale access is available on nodes connected by InfiniBand (red lines). Cray Aries interconnect (green lines) is used for communication between XC50 compute nodes, and for Spectrum Scale access via DVS (Data Virtualization Service) nodes.
+
 ## Architecture
 
 Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Supercomputer) built on the Cray XC50 platform.

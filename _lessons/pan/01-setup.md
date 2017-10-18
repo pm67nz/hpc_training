@@ -94,7 +94,7 @@ scp -r -i ~/.ssh/XXX_rsa_key /home/username_on_local_machine/Desktop/python-novi
 
 ```
 
-### Keeing your data in sync with the cluster
+### Keeping your data in sync with the cluster
 
 (This section is based on the ["High Performance Computing at NYU" materials](https://wikis.nyu.edu/display/NYUHPC/How+to+copy+files+to+and+from+the+HPC+clusters) )
 

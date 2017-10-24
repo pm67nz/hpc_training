@@ -158,10 +158,11 @@ echo $CPATH
 echo $LIBRARY_PATH
 echo $LD_LIBRARY_PATH
 ```
-This automatic setup may not always work, in which case you will need to help things along a little bit by specifying these paths manually using EasyBuild's automatically defined module variables. These can be found by running the `module show` command:
+This automatic setup does **not** work in case of the Cray compiler, unfortunately. You will need to help things along a little bit by specifying paths manually using EasyBuild's automatically defined module variables. These can be found by running the `module show` command:
 ```
-module show GSL/2.4-CrayGNU-2017.06
-cc -I$EBROOTGSL/include -o gsl_statistics_example gsl_statistics_example.c -L$EBROOTGSL/lib -lgsl
+module swap PrgEnv-gnu PrgEnv-cray
+module load grib_api/1.23.1-CrayCCE-2017.06
+cc -I$EBROOTGRIB_API/include -o grib_example grib_example.c -L$EBROOTGRIB_API/lib -lgrib_api
 ```
 EasyBuild's convention for the variable names is `EBROOT<package name>`.
 

@@ -12,17 +12,9 @@ If you are logging in for the first time to Kupe, you will need to set up your p
 3. Set password for Kupe (HPC3).
 
 Connecting to the HPC requires two-factor authentication at all times, your password, and an additional factor. These additional factors can be:
-- A keycode provided by Google Authenticator (via smartphone app or Chrome browser)
+- A keycode provided by an external generator (e.g., via smartphone app)
 - Connecting from NIWA's physical network (at a NIWA branch)
 - Connecting through a NIWA VPN session
-
-You can set up Google Authenticator on the NeSI User Portal:
-
-4. Click "Link mobile device"
-5. This will open instructions for setting up Google Authenticator. Note that you will need to have a smartphone for this. If you do not have a smartphone, you can use [GAuth add-on](https://chrome.google.com/webstore/detail/ilgcnhelpchnceeipipijaljkblbcobl) for Chrome browser.
-
-
-
 
 ### Logging into Kupe (HPC3)
 
@@ -40,6 +32,6 @@ If you use MobaXterm or Putty, start a new ssh session with remote host `kupe.ni
 
 2. Enter your password (the one you set up in NeSI User Portal)
 
-3. If you are logging in from outside of NIWA network, you will need to enter 6-digit code from the Google Authenticator which you set up (see above).
+3. If you are logging in from outside of NIWA network, you will need to enter the additional keycode.
 
 You should now see the reply from Kupe's elogin node.

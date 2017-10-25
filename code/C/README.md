@@ -19,13 +19,16 @@ cc -o simpleMpiC simpleMpi.c
 
 ## gsl_statistics_example
 
-This example shows how to compile a program that links to the Gnu Scientific library (GSL). 
+This example shows how to compile a program that links to the GNU Scientific library (GSL). Unless the Cray C compiler is used, it should not be necessary to specify include and library search paths:
 
 ```
 module load GSL
+cc -o gsl_statistics_example gsl_statistics_example.c -lgsl
+```
+If you do need to specify the paths, you can use the ```EBROOTGSL``` environment variable provided by the EasyBuild module:
+```
 cc -I$EBROOTGSL/include -o gsl_statistics_example gsl_statistics_example.c -L$EBROOTGSL/lib -lgsl
 ```
-
 Alternatively, to avoid loading the GSL module which will load the GNU module, you can
 ```
 EBROOTGSL=/mnt/FS4MB/NESINIWA/n17755/easybuild/software/GSL/2.4-CrayGNU-2017.06
@@ -33,3 +36,10 @@ cc -I$EBROOTGSL/include -o gsl_statistics_example gsl_statistics_example.c -L$EB
 ```
 
 Note: the path ```/mnt/FS4MB/NESINIWA/n17755/easybuild/software/GSL/2.4-CrayGNU-2017.06``` can be obtained by typing ```module show GSL```. Also the second method allows you to mix the GNU compilers with either Cray of Intel, which works for C but typically not for Fortran programs.
+
+## grib_example
+
+This example shows how to compile a program that links to the GRIB API library:
+```
+cc -I$EBROOTGRIB_API/include -o grib_example grib_example.c -L$EBROOTGRIB_API/lib -lgrib_api
+```

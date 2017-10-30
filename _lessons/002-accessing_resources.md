@@ -35,3 +35,10 @@ If you use MobaXterm or Putty, start a new ssh session with remote host `kupe.ni
 3. If you are logging in from outside of NIWA network, you will need to enter the additional keycode.
 
 You should now see the reply from Kupe's elogin node.
+
+Proceed to the temporary ```transit``` directory before changing or running anything on Kupe:
+```
+cd /transit/your_username
+```
+
+**Please do not create or modify any files or directories in your home directory or in any of the directories that were migrated from FitzRoy - synchronisation between FitzRoy and Kupe is still ongoing, and modified files on Kupe will be overwritten!**

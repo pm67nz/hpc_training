@@ -3,34 +3,36 @@ layout: post
 title: HPC3 Fitzroy to Kupe migration
 ---
 
+### Important information about use of the filesystems on Kupe.
 
-### Files migration
+Your files on FitzRoy in ```/home```, ```/data```, and ```/working``` are being synchronized with the new filesystems on Kupe.  In particular
 
-All FitzRoy users' files have been migrated to Kupe, and synchronisation will continue until FitzRoy shuts down. **Important: To ensure data consistency and integrity, users must not write to the migrated file spaces listed below until synchronisation stops!** Temporary directories will be made available in the meantime. All migrated files are nonetheless available for read access.
+| Path on FitzRoy                        | Path on Kupe                                       |
+|----------------------------------------|----------------------------------------------------|
+| /hpcf/home/<user_name>                 | /nesi/home/<user_name>                             |
+| /hpcf/working/<user_name>              | /nesi/nobackup/<user_name>                         |
+| /hpcf/data/<user_name>                 | /nesi/nearline/<user_name> (**no direct access!**) |
 
-#### Mapping of file spaces between FitzRoy and Kupe
+On Kupe, there will also be a new filesystem, ```/nesi/projects```.
 
-FitzRoy data will be made available using the paths listed below.
+This synchronization is occurring on a regular basis with the objective of ensuring that the content of directories on Kupe will be identical to those on FitzRoy.
 
-##### Research Users
+* This means that if you modify or create a file in any of the Kupe filesystems noted above, it will be removed at the next synchronization.
 
-| Path on Kupe                           | Path on FitzRoy            |
-|----------------------------------------|----------------------------|
-| /nesi/home/\<user name>                | /hpcf/home/\<user name>    |
-| /nesi/project/\<project name>          | -- no equivalent --        |
-| /nesi/nobackup/\<user or project name> | /hpcf/working/\<user name> |
-| -- no direct access --                 | /hpcf/data/\<user name>    |
+Accordingly, we have created a new filesystem (```/transit```) on Kupe that is not synchronized with FitzRoy.  You can safely work in that filesystem without risk of loss of data. 
 
-##### Operational Users
+* So, after logging into Kupe you should ```cd /transit/<user name>``` and work there.
 
-During migration, file paths will be the same on FitzRoy and on Kupe (e.g., `/oper/ecoconnect/ecoconnect_oper`). A new model will be implemented in the near future, a recommendation is listed below.
+On the date (TBD) that Kupe is deemed to be the primary HPC, synchronization will cease, and you may again resume working from your ```/home``` (```/project```) and ```/nobackup``` directories, and move any critical information from ```/transit``` to its final location.
 
-| Path on Kupe      | Path on FitzRoy                    |
-|-------------------|------------------------------------|
-| /oper/ecoconnect  | /oper/ecoconnect/ecoconnect_oper   |
-| /test/ecoconnect  | /test/ecoconnect/ecoconnect_test   |
-| /devel/ecoconnect | /devel/ecoconnect/ecoconnect_devel |
-| /admin/ecoconnect | /oper/admin/ecoconnect_admin       |
+For operational users, the filesystem synchronization (when initiated) will map as follows (where there may be additional symbolic links to make these more direct).
+
+| Path on FitzRoy   | Path on Kupe          |
+|-------------------|-----------------------|
+| /oper             | /niwa/oper            |
+| /test/ecoconnect  | /niwa/devoper/test    |
+| /devel/ecoconnect | /niwa/devoper/devel   |
+| /oper/archive     | /niwa/devoper/archive |
 
 ### Translating your job scheduler Load Leveler scripts to SLURM
 

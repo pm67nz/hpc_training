@@ -5,7 +5,7 @@ title: HPC3 Fitzroy to Kupe migration
 
 ### Important information about use of the filesystems on Kupe.
 
-Your files on FitzRoy in ```/home```, ```/data```, and ```/working``` are being synchronized with the new filesystems on Kupe.  In particular
+Your files on FitzRoy in `/home`, `/data`, and `/working` are being synchronized with the new filesystems on Kupe.  In particular
 
 | Path on FitzRoy                        | Path on Kupe                                       |
 |----------------------------------------|----------------------------------------------------|
@@ -13,17 +13,17 @@ Your files on FitzRoy in ```/home```, ```/data```, and ```/working``` are being 
 | /hpcf/working/<user_name>              | /nesi/nobackup/<user_name>                         |
 | /hpcf/data/<user_name>                 | /nesi/nearline/<user_name> (**no direct access!**) |
 
-On Kupe, there will also be a new filesystem, ```/nesi/projects```.
+On Kupe, there will also be a new filesystem, `/nesi/projects`.
 
 This synchronization is occurring on a regular basis with the objective of ensuring that the content of directories on Kupe will be identical to those on FitzRoy.
 
 * This means that if you modify or create a file in any of the Kupe filesystems noted above, it will be removed at the next synchronization.
 
-Accordingly, we have created a new filesystem (```/transit```) on Kupe that is not synchronized with FitzRoy.  You can safely work in that filesystem without risk of loss of data. 
+Accordingly, we have created a new filesystem (`/nesi/transit`) on Kupe that is not synchronized with FitzRoy.  You can safely work in that filesystem without risk of loss of data. 
 
-* So, after logging into Kupe you should ```cd /transit/<user name>``` and work there.
+* So, after logging into Kupe you should `cd /transit/<user name>` and work there.
 
-On the date (TBD) that Kupe is deemed to be the primary HPC, synchronization will cease, and you may again resume working from your ```/home``` (```/project```) and ```/nobackup``` directories, and move any critical information from ```/transit``` to its final location.
+On the date (TBD) that Kupe is deemed to be the primary HPC, synchronization will cease, and you may again resume working from your `/home` (`/project`) and `/nobackup` directories, and move any critical information from `/nesi/transit` to its final location.
 
 For operational users, the filesystem synchronization (when initiated) will map as follows (where there may be additional symbolic links to make these more direct).
 

@@ -26,7 +26,7 @@ The diagram illustrates major building blocks and network connections on Kupe re
 
 #### Compute Hardware:
 * 104 XC50 compute nodes
-   - 2x Intel Xeon Gold 6148 2.4 GHz processor with 20 physical cores each (total of 40 physical cores per node)
+   - 2x Intel Xeon Gold 6148 2.4 GHz processor with 20 physical cores each (40 physical cores per node)
    - 96 GB of RAM per node
 * 11 CS500 nodes
    - Same Intel Xeon Gold 6148 SKL processor as compute nodes
@@ -43,7 +43,7 @@ If you are interested in learning more about the hardware, please find the detai
    - Cray Aries interconnect (low-latency network, used by MPI jobs, IO, ...)
    - 19 DVS (Data Virtualization Service) links for accessing Spectrum Scale filesystems over Cray Aries (currently no native access possible), which may limit IO performance for some jobs
    - Used only for running jobs, no direct access
-   - Runs a slim version of SLES (Linux)
+   - Runs a slim version of SLES (SUSE Linux Enterprise Server)
 * 2 eLogin nodes
    - Same Intel Xeon Gold 6148 SKL processor as compute nodes (no cross-compilation needed!)
    - Native access to Spectrum Scale filesystems

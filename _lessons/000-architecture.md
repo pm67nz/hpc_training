@@ -5,9 +5,19 @@ title: Overview of Kupe architecture
 
 ## Platform Overview
 
+NeSI has acquired three new supercomputing platforms:
+
+* mahuika (HPC1). Capacity supercomputer Cray CS400
+
+* maui (HPC2). Capability supercomputer Cray XC50
+
+* kupe (HPC3). Smaller version of maui. Will serve as transition platform as we migrate users from Fitzroy to maui and mahuika. 
+
+Fitzroy will be decommissioned in November 2017. Users are expected to switch over from Fitzroy to kupe during a one week period in November. (More information about this will be provided.)
+
 ## Architecture
 
-Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Supercomputer) built on the Cray XC50 and CS500 platforms.
+Kupe is a Massively Parallel Capability Computer (Supercomputer) built on the Cray XC50 and CS500 platforms.
 
 ![alt text](https://github.com/nesi/hpc_training/blob/gh-pages/Kupe_Overview.png "Kupe building blocks and network connections")
 

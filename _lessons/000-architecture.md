@@ -3,7 +3,9 @@ layout: post
 title: Overview of Kupe architecture
 ---
 
-## Platform Overview
+You will learn about the Kupe architecture, how Kupe differs from Fitzroy in terms of hardware. Differences and similarities with Mahuika and Maui.  
+
+## Overview
 
 NeSI has acquired three new supercomputing platforms:
 
@@ -15,7 +17,7 @@ NeSI has acquired three new supercomputing platforms:
 
 Fitzroy will be decommissioned in November 2017. Users are expected to switch over from Fitzroy to Kupe during a one week period in November. (More information about this will be provided.)
 
-## Architecture
+## Kupe Architecture
 
 Kupe is a Massively Parallel Capability Computer (Supercomputer) built on the Cray XC50 and CS500 platforms.
 

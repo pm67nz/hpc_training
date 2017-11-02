@@ -15,7 +15,6 @@ Additional information can be found at: https://support.nesi.org.nz/hc/en-gb/art
 
 Adapted from Jordi Blasco's [Introduction to SLURM documentation](https://wiki.auckland.ac.nz/download/attachments/63145549/introduction-slurm.pdf?api=v2)
 
-
 ## Features of SLURM
 
 - Full control over CPU and memory usage

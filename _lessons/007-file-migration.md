@@ -1,7 +1,9 @@
 ---
 layout: post
-title: HPC3 Fitzroy to Kupe migration
+title: HPC3 FitzRoy to Kupe migration
 ---
+
+You will learn how to migrate from FitzRoy to Kupe. 
 
 ### Important information about use of the filesystems on Kupe.
 

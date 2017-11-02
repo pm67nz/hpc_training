@@ -3,7 +3,11 @@ layout: post
 title:  HPC3 Programming Environment
 ---
 
-Please use `git clone` to download this repository, if you want to try out compiling code yourself:
+You will learn how to compile code on Kupe. 
+
+## Getting the code examples
+
+To access the code examples:
 
 ```
 git clone https://github.com/nesi/hpc_training.git
@@ -117,7 +121,7 @@ man CC
 ```
 
 
-### Linking against an external library
+## Linking against an external library
 
 Three different cases need to be considered for linking your code against an external library:
 

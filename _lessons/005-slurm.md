@@ -3,6 +3,9 @@ layout: post
 title: HPC3 Slurm job scheduler
 ---
 
+You will learn how to submit jobs using the SLURM scheduler. 
+
+## What is SLURM?
 
 SLURM is a software used on the NeSI supercomputers for scheduling and managing job submission requests. A job is a script that tells the scheduler how much resources you will require to perform a given computational work. SLURM will then try to accommodate your request while maximising overall user experience.
 

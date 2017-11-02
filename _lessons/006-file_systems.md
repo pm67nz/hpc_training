@@ -3,6 +3,8 @@ layout: post
 title: HPC3 File and directory structure, and their use
 ---
 
+You will learn where to run and where to store your data.
+
 ### NeSI and NIWA research users
 
 It is important to use the file structure according to its purpose to get best performance while ensuring that important data are not lost. 

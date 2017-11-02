@@ -3,6 +3,8 @@ layout: post
 title: HPC3 Available software
 ---
 
+You will learn how to access the software stack with the module environment.
+
 ### Architectures
 
 Kupe consists of nodes with two different architectures and operating systems:
@@ -24,7 +26,7 @@ Due to the different operating systems and runtime resource constraints (availab
 
 ### Modules
 
-Most software packages installed on FitzRoy will be available on Kupe (HPC3) using [Lmod](https://lmod.readthedocs.io/en/latest/) modules. Using Lmod is largely the same as using the traditional environment modules, but Lmod has a few additional tricks.
+Most software packages installed on FitzRoy will be available on Kupe (HPC3) using [Lmod](https://lmod.readthedocs.io/en/latest/) modules. Using Lmod is largely the same as using the traditional environment modules but Lmod has a few additional tricks.
 
 Although the software stacks are still being built, a preliminary version of the NIWA software stack can be loaded using
 ```
@@ -38,6 +40,11 @@ command. This will bring up software provided by Cray, and additional modules pr
 ```
 module avail <module name>
 ```
+Here ```<module name>``` is the module name without the version number (not a regular expression). For instance,
+    ```
+    module avail cray-netcdf
+    ```
+
 To get a list of modules that you are currently using, type
 ```
 module list
@@ -47,10 +54,12 @@ To get information about a particular module, use
 module help <module name>
 module show <module name>
 ```
+
 To find all modules that, e.g., have "python" in their name, use
 ```
 module spider python
 ```
+(Will be supported with lmod).
 
 Scientific software packages that have been migrated or installed so far include:
 
@@ -58,6 +67,8 @@ Scientific software packages that have been migrated or installed so far include
 * SpecFEM
 * Data processing and visualisation: NCL, NCO, CDO, NCView, um2netcdf, IRIS, xconv, gnuplot
 * Libraries: ESMF, XIOS, GDAL, GEOS, PROJ, HDF-EOS
+
+**Never purge your environment - many modules are required in one version or another**
 
 ### Requesting software installation
 If you need a software package and it is not installed on Kupe, please email support@nesi.org.nz. If the software can be compiled on Kupe, runs there and there are no licensing restrictions, we will make every effort to install the software within days. Occasionally, we may need more time to investigate the licensing set up (for example, if the licensing server is provided through your organisation.)

@@ -3,7 +3,7 @@ layout: post
 title: Overview of Kupe architecture
 ---
 
-You will learn about Kupe's architecture and how it differs from Fitzroy in terms of hardware.  
+You will learn about Kupe's architecture and how it differs from FitzRoy in terms of hardware.  
 
 ## Overview
 
@@ -13,9 +13,9 @@ NeSI has acquired three new supercomputing platforms:
 
 * Maui (HPC2). Capability supercomputer Cray XC50
 
-* Kupe (HPC3). Smaller version of maui. Will serve as transition platform as we migrate users from Fitzroy to Maui and Mahuika. 
+* Kupe (HPC3). Smaller version of maui. Will serve as transition platform as we migrate users from FitzRoy to Maui and Mahuika. 
 
-Fitzroy will be decommissioned in November 2017. Users are expected to switch over from Fitzroy to Kupe during a one week period in November. (More information will be provided.)
+FitzRoy will be decommissioned in November 2017. Users are expected to switch over from FitzRoy to Kupe shortly before. (More information will be provided.)
 
 ## Kupe Architecture
 
@@ -71,7 +71,7 @@ Kupe is installed in Auckland in the Tamaki Data Centre, with IBM storage over E
 Multi-Cluster Spectrum Scale filesystems.
 
 #### Main improvements
-* Faster processors compared to those on Fitzroy or Pan
+* Faster processors compared to those on FitzRoy or Pan
 * GPGPU (General Purpose Graphical Processing Unit) nodes to support science codes and visualisation
 * A Linux user environment that will make it easier to manage work, develop and run research workloads/jobs, and apply data analytics tools
 * Increased storage capacity and hierarchical storage management to minimise the need to move data between the HPC storage and a user’s home institution, and underpin the new interactive data analysis services.

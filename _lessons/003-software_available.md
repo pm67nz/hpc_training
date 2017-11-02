@@ -26,6 +26,10 @@ Due to the different operating systems and runtime resource constraints (availab
 
 Most software packages installed on FitzRoy will be available on Kupe (HPC3) using [Lmod](https://lmod.readthedocs.io/en/latest/) modules. Using Lmod is largely the same as using the traditional environment modules, but Lmod has a few additional tricks.
 
+Although the software stacks are still being built, a preliminary version of the NIWA software stack can be loaded using
+```
+source /opt/niwa/share_prelim/niwa_modules.sh
+```
 A list of available software can be obtained with the 
 ```
 module avail 

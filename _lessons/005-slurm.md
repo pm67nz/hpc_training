@@ -160,9 +160,7 @@ Here are a few more examples for submitting jobs with SLURM.
 
 #### run_simple.sl
 
-A script to run the R script simple.R as an example of submitting a R script using slurm
-
-Output will be captured in the slurm output file
+This script runs the R script simple.R. Find the output in the slurm output file.
 
 ```
 sbatch -A project_code run_simple.sl
@@ -170,9 +168,7 @@ sbatch -A project_code run_simple.sl
 
 #### run_print-args.sl
 
-A script to demonstrate passing in commandline arguments to an Rscript as part submitting a slurm job
-
-Output will be captured in the slurm output file
+This script demonstrates how to pass command line arguments from the SLURM job down to an R script. Find the output in the slurm output file.
 
 ```
 sbatch -A project_code run_print-args.sl first second third
@@ -180,7 +176,7 @@ sbatch -A project_code run_print-args.sl first second third
 
 #### run_array-analysis
 
-A script to demonstrate using a slurm array job to run an analysis in parallel on different input datasets. Note that it is highly recommended to use the [Cylc workflow engine](https://cylc.github.io/cylc) if you need to run a job with complex task dependencies.
+Example of a job array. This script demonstrates how to run an analysis on different input datasets in parallel. Note that it is highly recommended to use the [Cylc workflow engine](https://cylc.github.io/cylc) if you need to run a job with complex task dependencies.
 
 ```
 sbatch -A project_code run_array-analysis.sl

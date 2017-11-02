@@ -76,7 +76,10 @@ switch between the different version by swapping the appropriate modules, e.g.,
 ```
 module swap gcc/4.9.3 gcc/7.1.0
 ```
-
+You'll need to load GCC v6.1.0 or later if you set the `craype-x86-skylake` environment, otherwise you'll get error messages of the kind
+```
+craype-x86-skylake requires cce/8.6 or later, intel/15.1 or later, or gcc/6.1 or later
+```
 You should _always_ invoke the ```ftn```, ```cc``` and ```CC``` compiler drivers to ensure correct linking, regardless of the programming environment.
 
 Note that swapping programming environments will automatically swap Cray-provided libraries - but this will **not** be the case for libraries provided by NeSI or NIWA.

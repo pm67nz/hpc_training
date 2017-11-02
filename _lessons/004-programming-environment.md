@@ -151,7 +151,6 @@ and look for modules that start with "cray-" to get a full list of Cray-provided
 
 NeSI and NIWA use EasyBuild to provide additional, commonly used libraries. In many cases, loading the library module before building your code will suffice to make it visible to the compiler driver:
 ```
-module swap PrgEnv-cray PrgEnv-gnu
 module load GSL/2.4-CrayGNU-2017.06
 cc -o gsl_statistics_example gsl_statistics_example.c -lgsl
 ```

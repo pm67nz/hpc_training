@@ -39,8 +39,3 @@ This training material has been developed based on a number of existing resource
 * [Various sets of NeSI training materials](https://github.com/nesi/training)
 * [University of Otago Pan cluster instructions](https://rawgit.com/dannybaillie/NeSI/master/OtagoPanInstructions.html)
 
-
-
-
-
-

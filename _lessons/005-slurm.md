@@ -36,8 +36,8 @@ You could add this line to your `.profile` if you don't want to load the module 
 SLURM works like any other scheduler - you can submit jobs to a queue, and SLURM will run them for you when the resources that you requested become available. Jobs are usually defined using a job script, although you can also submit jobs without a script, directly from the command line:
 
 ```
-sbatch -A [Project Account] -t 10 --wrap "echo hello world"
-sbatch --account [Project Account] --time 10 --wrap "echo hello world"
+sbatch -A <project_code> -t 10 --wrap "echo hello world"
+sbatch --account <project_code> --time 10 --wrap "echo hello world"
 ```
 These two variants of the command are equivalent - SLURM offers short and long versions of many options (although there is no short form of `--warp`. The option `-t` or `--time` sets a limit on the total run time of the job allocation. Note that each partition on which the jobs are run has its own time limit. If the set time limit exceeds the limit for the partition, the job will become "PENDING" (for more information on job statuses, see below). The `--wrap` option means that the following string (in "") will be turned into a simple shell script by SLURM.
 
@@ -165,7 +165,7 @@ A script to run the R script simple.R as an example of submitting a R script usi
 Output will be captured in the slurm output file
 
 ```
-sbatch -A project_code run_simple.sl
+sbatch -A <project_code> run_simple.sl
 ```
 
 #### run_print-args.sl
@@ -175,7 +175,7 @@ A script to demonstrate passing in commandline arguments to an Rscript as part s
 Output will be captured in the slurm output file
 
 ```
-sbatch -A project_code run_print-args.sl first second third
+sbatch -A <project_code> run_print-args.sl first second third
 ```
 
 #### run_array-analysis
@@ -183,9 +183,9 @@ sbatch -A project_code run_print-args.sl first second third
 A script to demonstrate using a slurm array job to run an analysis in parallel on different input datasets. Note that it is highly recommended to use the [Cylc workflow engine](https://cylc.github.io/cylc) if you need to run a job with complex task dependencies.
 
 ```
-sbatch -A project_code run_array-analysis.sl
-sbatch --array=1 -A [project_code] run_array-analysis.sl something.txt
-sbatch --array=1-2 -A [project_code] run_array-analysis.sl
+sbatch -A <project_code> run_array-analysis.sl
+sbatch --array=1 -A <project_code> run_array-analysis.sl something.txt
+sbatch --array=1-2 -A <project_code> run_array-analysis.sl
 ```
 
 ### How to choose the right runtime environment

@@ -3,6 +3,9 @@ layout: post
 title: HPC3 Slurm job scheduler
 ---
 
+You will learn how to submit jobs using the SLURM scheduler. 
+
+## What is SLURM?
 
 SLURM is a software used on the NeSI supercomputers for scheduling and managing job submission requests. A job is a script that tells the scheduler how much resources you will require to perform a given computational work. SLURM will then try to accommodate your request while maximising overall user experience.
 
@@ -11,7 +14,6 @@ SLURM was an acronym for Simple Linux Utility for Resource Management
 Additional information can be found at: https://support.nesi.org.nz/hc/en-gb/articles/115000194910-Submitting-Slurm-Jobs-on-Pan
 
 Adapted from Jordi Blasco's [Introduction to SLURM documentation](https://wiki.auckland.ac.nz/download/attachments/63145549/introduction-slurm.pdf?api=v2)
-
 
 ## Features of SLURM
 
@@ -160,9 +162,7 @@ Here are a few more examples for submitting jobs with SLURM.
 
 #### run_simple.sl
 
-A script to run the R script simple.R as an example of submitting a R script using slurm
-
-Output will be captured in the slurm output file
+This script runs the R script simple.R. Find the output in the slurm output file.
 
 ```
 sbatch -A <project_code> run_simple.sl
@@ -170,9 +170,7 @@ sbatch -A <project_code> run_simple.sl
 
 #### run_print-args.sl
 
-A script to demonstrate passing in commandline arguments to an Rscript as part submitting a slurm job
-
-Output will be captured in the slurm output file
+This script demonstrates how to pass command line arguments from the SLURM job down to an R script. Find the output in the slurm output file.
 
 ```
 sbatch -A <project_code> run_print-args.sl first second third
@@ -180,7 +178,7 @@ sbatch -A <project_code> run_print-args.sl first second third
 
 #### run_array-analysis
 
-A script to demonstrate using a slurm array job to run an analysis in parallel on different input datasets. Note that it is highly recommended to use the [Cylc workflow engine](https://cylc.github.io/cylc) if you need to run a job with complex task dependencies.
+Example of a job array. This script demonstrates how to run an analysis on different input datasets in parallel. Note that it is highly recommended to use the [Cylc workflow engine](https://cylc.github.io/cylc) if you need to run a job with complex task dependencies.
 
 ```
 sbatch -A <project_code> run_array-analysis.sl

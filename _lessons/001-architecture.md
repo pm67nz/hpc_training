@@ -3,11 +3,23 @@ layout: post
 title: Overview of Kupe architecture
 ---
 
-## Platform Overview
+You will learn about Kupe's architecture and how it differs from FitzRoy in terms of hardware.  
 
-## Architecture
+## Overview
 
-Kupe, previously known as HPC3, is a Massively Parallel Capability Computer (Supercomputer) built on the Cray XC50 and CS500 platforms.
+NeSI has acquired three new supercomputing platforms:
+
+* Mahuika (HPC1). Capacity supercomputer Cray CS400
+
+* Maui (HPC2). Capability supercomputer Cray XC50
+
+* Kupe (HPC3). Smaller version of maui. Will serve as transition platform as we migrate users from FitzRoy to Maui and Mahuika. 
+
+FitzRoy will be decommissioned in November 2017. Users are expected to switch over from FitzRoy to Kupe shortly before. (More information will be provided.)
+
+## Kupe Architecture
+
+Kupe is a Massively Parallel Capability Computer (Supercomputer) built on the Cray XC50 and CS500 platforms.
 
 ![alt text](https://github.com/nesi/hpc_training/blob/gh-pages/Kupe_Overview.png "Kupe building blocks and network connections")
 
@@ -16,7 +28,7 @@ The diagram illustrates major building blocks and network connections on Kupe re
 
 #### Compute Hardware:
 * 104 XC50 compute nodes
-   - 2x Intel Xeon Gold 6148 2.4 GHz processor with 20 physical cores each (total of 40 physical cores per node)
+   - 2x Intel Xeon Gold 6148 2.4 GHz processor with 20 physical cores each (40 physical cores per node)
    - 96 GB of RAM per node
 * 11 CS500 nodes
    - Same Intel Xeon Gold 6148 SKL processor as compute nodes
@@ -33,7 +45,7 @@ If you are interested in learning more about the hardware, please find the detai
    - Cray Aries interconnect (low-latency network, used by MPI jobs, IO, ...)
    - 19 DVS (Data Virtualization Service) links for accessing Spectrum Scale filesystems over Cray Aries (currently no native access possible), which may limit IO performance for some jobs
    - Used only for running jobs, no direct access
-   - Runs a slim version of SLES (Linux)
+   - Runs a slim version of SLES (SUSE Linux Enterprise Server)
 * 2 eLogin nodes
    - Same Intel Xeon Gold 6148 SKL processor as compute nodes (no cross-compilation needed!)
    - Native access to Spectrum Scale filesystems
@@ -59,7 +71,7 @@ Kupe is installed in Auckland in the Tamaki Data Centre, with IBM storage over E
 Multi-Cluster Spectrum Scale filesystems.
 
 #### Main improvements
-* Faster processors compared to those on Fitzroy or Pan
+* Faster processors compared to those on FitzRoy or Pan
 * GPGPU (General Purpose Graphical Processing Unit) nodes to support science codes and visualisation
 * A Linux user environment that will make it easier to manage work, develop and run research workloads/jobs, and apply data analytics tools
 * Increased storage capacity and hierarchical storage management to minimise the need to move data between the HPC storage and a user’s home institution, and underpin the new interactive data analysis services.

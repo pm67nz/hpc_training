@@ -3,9 +3,11 @@ layout: post
 title: HPC3 - Accessing system resources
 ---
 
+You will learn how to set your password initially and how to log in to Kupe. 
+
 ### Logging in for the first time
 
-If you are logging in for the first time to Kupe, you will need to set up your password using [NeSI User Portal](https://my.nesi.org.nz/accounts).
+If you are logging in for the first time to Kupe, you will need to set up your password using [NeSI User Portal: https://projects.nesi.org.nz/ssp/](https://projects.nesi.org.nz/ssp/).
 
 1. Log in to the NeSI User Portal using your institutional credentials via Tuakiri.
 2. Click on "Account" link in the top-right corner.
@@ -16,7 +18,7 @@ Connecting to the HPC requires two-factor authentication at all times, your pass
 - Connecting from NIWA's physical network (at a NIWA branch)
 - Connecting through a NIWA VPN session
 
-### Logging into Kupe (HPC3)
+### Logging in to Kupe (HPC3)
 
 You will need a terminal program to log into Kupe:
 
@@ -24,7 +26,7 @@ You will need a terminal program to log into Kupe:
 - MacOS X: Terminal app, iTerm2
 - Linux: Terminal app
 
-#### Logging into the lander node
+#### Logging in to the lander node
 
 Note: You can skip this section if you log on from inside the NIWA network.
 
@@ -38,7 +40,7 @@ If you use MobaXterm or Putty, start a new ssh session with remote host `lander.
 
 You should now see the reply from Kupe's lander node.
 
-#### Logging into the login node
+#### Logging in to the login node
 
 1. Connect using `ssh` either from your session on the lander node, or from a terminal program on your local machine if you are inside the NIWA network:
 ```
@@ -48,7 +50,7 @@ You should now see the reply from Kupe's lander node.
 
 You should now see the reply from Kupe's `elogin` node.
 
-Proceed to the temporary `/nesi/transit` directory before changing or running anything on Kupe:
+Proceed to the temporary `cd /nesi/transit` directory before changing or running anything on Kupe:
 ```
 cd /nesi/transit/your_username
 ```

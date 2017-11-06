@@ -3,6 +3,8 @@ layout: post
 title: HPC3 Data storage and transfer
 ---
 
+You will learn how to transfer data to and from Kupe.
+
 ### Transferring small amounts of data
 
 For small amounts of data, utilities such as SecureCopy (`scp`) can be used. `scp` should be readily available on a terminal on Linux and MacOS, or via [WinSCP](https://winscp.net/eng/download.php) and [MobaXterm](https://mobaxterm.mobatek.net) on Windows. Note that two-factor authentication will be required for file transfer sessions.

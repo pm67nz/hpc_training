@@ -3,7 +3,11 @@ layout: post
 title:  HPC3 Programming Environment
 ---
 
-Please use `git clone` to download this repository, if you want to try out compiling code yourself:
+You will learn how to compile code on Kupe. 
+
+## Getting the code examples
+
+To access the code examples:
 
 ```
 git clone https://github.com/nesi/hpc_training.git
@@ -76,7 +80,14 @@ switch between the different version by swapping the appropriate modules, e.g.,
 ```
 module swap gcc/4.9.3 gcc/7.1.0
 ```
-
+You'll need to load GCC v6.1.0 or later if you set the `craype-x86-skylake` environment, otherwise you'll get error messages of the kind
+```
+craype-x86-skylake requires cce/8.6 or later, intel/15.1 or later, or gcc/6.1 or later
+```
+Alternatively, you can switch to the `craype-broadwell` target:
+```
+module swap craype-x86-skylake craype-broadwell
+```
 You should _always_ invoke the ```ftn```, ```cc``` and ```CC``` compiler drivers to ensure correct linking, regardless of the programming environment.
 
 Note that swapping programming environments will automatically swap Cray-provided libraries - but this will **not** be the case for libraries provided by NeSI or NIWA.
@@ -110,7 +121,7 @@ man CC
 ```
 
 
-### Linking against an external library
+## Linking against an external library
 
 Three different cases need to be considered for linking your code against an external library:
 
@@ -146,9 +157,13 @@ and look for modules that start with "cray-" to get a full list of Cray-provided
 
 2. The library is provided via NeSI or NIWA
 
-NeSI and NIWA use EasyBuild to provide additional, commonly used libraries. In many cases, loading the library module before building your code will suffice to make it visible to the compiler driver:
+NeSI and NIWA use EasyBuild to provide additional, commonly used libraries. In many cases, loading the library module before building your code will suffice to make it visible to the compiler driver. This example requires the `PrgEnv-gnu` environment, and the `craype-x86-skylake` target is not supported; run
 ```
+module swap craype-x86-skylake craype-broadwell
 module swap PrgEnv-cray PrgEnv-gnu
+```
+before you continue (you may need to replace `PrgEnv-cray` with `PrgEnv-intel` if you worked with the Intel environment before). You should then be able to use the GSL library in the following example:
+```
 module load GSL/2.4-CrayGNU-2017.06
 cc -o gsl_statistics_example gsl_statistics_example.c -lgsl
 ```

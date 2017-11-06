@@ -19,6 +19,6 @@ Below is a rough timeline for each functionality on Kupe.
 
 Functionality                 | Ready when            |
 ------------------------------|-----------------------|
-Multi-purpose nodes available | After 20 October 2017 |
-Slurm configuration           | After 23 October 2017 | 
-Virtual Labs available        | After 25 October 2017 |
+Multi-purpose nodes available | End of October 2017   |
+Slurm configuration           | Early November 2017   | 
+Virtual Labs available        | Early November 2017   |

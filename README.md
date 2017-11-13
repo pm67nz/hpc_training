@@ -2,6 +2,8 @@
 
 Training materials for a hands-on workshop on introduction to HPC using NeSI, including scripts for NeSI HPC training workshop. The materials are largely based on the content created by the University of Otago staff, New Zealand eScience Infrastructure staff and Centre for eResearh at the University of Auckland.
 
+If you missed the live training session on November 3 2017, you can find a recording at [https://drive.google.com/file/d/15uzVnhihycyC77wmCP0X1XBs-rv1Ogvc/view]. Note: this is an unedited recording - you can skip the first 23 minutes. 
+
 #### Contributors:
 
 Murray Cadzow, Matthew Healey, Gene Soudlenkov, Sung Bae, Benjamin Roberts, Bart Verleye, Jordi Blasco, Martin Feller, Peter Maxwell, Sina Masoud-Ansari, Danny Baillie, Tom Kelly, Alexander Pletzer, Chris Scott, Wolfgang Hayek, and Aleksandra Pawlik

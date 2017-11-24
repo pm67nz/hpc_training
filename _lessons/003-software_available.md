@@ -89,12 +89,12 @@ Scientific software and tools that are currently available on the XC50 include:
 | cray-hdf5                                 | 1.10.1.1              | Intel, Cray, GNU       | Provided by Cray               |
 | cray-hdf5-parallel                        | 1.10.1.1              | Intel, Cray, GNU       | Provided by Cray               |
 | cray-libsci                               | 17.09.1               | Intel, Cray, GNU       | Provided by Cray               |
-| cray-python                               | 17.09.1               | Intel, Cray, GNU       | Provided by Cray               |
+| cray-python                               | 17.09.1               | ---                    | Provided by Cray               |
 | cray-netcdf                               | 4.4.1.1.6             | Intel, Cray, GNU       | Provided by Cray               |
 | cray-netcdf-hdf5parallel                  | 4.4.1.1.6             | Intel, Cray, GNU       | Provided by Cray               |
 | cray-petsc                                | 3.7.6.0               | Intel, Cray, GNU       | Provided by Cray               |
 | cray-petsc-complex                        | 3.7.6.0               | Intel, Cray, GNU       | Provided by Cray               |
-| cray-R                                    | 3.3.3                 | Intel, Cray, GNU       | Provided by Cray               |
+| cray-R                                    | 3.3.3                 | ---                    | Provided by Cray               |
 | cray-trilinos                             | 12.10.1.1             | Intel, Cray, GNU       | Provided by Cray               |
 | Cylc                                      | 7.5.0                 | ---                    |                                |
 | ESMF                                      | 7.0.1                 | Intel, GNU             |                                |
@@ -107,7 +107,7 @@ Scientific software and tools that are currently available on the XC50 include:
 | HDF                                       | 4.2.13                | GNU                    |                                |
 | HDF-EOS                                   | 2.19v1.00             | GNU                    |                                |
 | HDF-EOS5                                  | 5.1.15                | GNU                    |                                |
-| ImageMagick                               | 7.0.7.-9              | GNU                    |                                |
+| ImageMagick                               | 7.0.7-9               | GNU                    |                                |
 | mjpegtools                                | 2.1.0                 | GNU                    |                                |
 | NCL                                       | 6.4.0                 | GNU                    |                                |
 | NCO                                       | 4.6.8                 | GNU                    |                                |
@@ -121,6 +121,41 @@ Scientific software and tools that are currently available on the XC50 include:
 | um2netcdf                                 | 3.2.0                 | GNU                    |                                |
 | XCONV                                     | 1.93                  | ---                    |                                |
 | XIOS-NC4PAR                               | r1242                 | Intel                  | Supports HDF5-parallel netCDF4 |
+
+#### CS500
+
+Scientific software and tools that are currently available on the CS500 include:
+
+| Module Name                               | Version(s)            | Built with compiler(s) | Notes                          |
+|-------------------------------------------|-----------------------|:----------------------:|:------------------------------:|
+| Anaconda2                                 | 4.2.0                 | ---                    |                                |
+| CDO                                       | 1.9.0                 | GNU                    |                                | 
+| Cylc                                      | 7.5.0                 | ---                    |                                |
+| FCM                                       | 2017.10.0             | ---                    |                                |
+| GDAL                                      | 2.2.1                 | GNU                    |                                |
+| GEOS                                      | 3.6.2                 | GNU                    |                                |
+| GRADS                                     | 2.2.0                 | GNU                    |                                |
+| GSL                                       | 2.4                   | GNU                    |                                |
+| HDF                                       | 4.2.13                | GNU                    |                                |
+| HDF-EOS                                   | 2.19v1.00             | GNU                    |                                |
+| HDF-EOS5                                  | 5.1.15                | GNU                    |                                |
+| IDL                                       | 8.5                   | ---                    |                                |
+| ImageMagick                               | 7.0.7-11              | GNU                    |                                |
+| IRIS                                      | 1.3.0                 | ---                    |                                |
+| mjpegtools                                | 2.1.0                 | GNU                    |                                |
+| NCL                                       | 6.4.0                 | GNU                    |                                |
+| NCO                                       | 4.6.8                 | GNU                    |                                |
+| NCVIEW                                    | 2.1.8                 | GNU                    |                                |
+| netCDF                                    | 4.5.0                 | GNU                    |                                |
+| netCDF-Fortran                            | 4.5.0                 | GNU                    |                                |
+| Perl                                      | 5.24.1                | GNU                    |                                |
+| PROJ                                      | 4.9.3                 | GNU                    |                                |
+| R                                         | 3.3.3                 | GNU                    |                                |
+| Rose                                      | 2017.10.0             | ---                    |                                |
+| SCons                                     | 3.0.0                 | ---                    |                                |
+| splat                                     | 1.0.3                 | ---                    |                                |
+| UDUNITS                                   | 1.12.11, 2.2.25       | GNU                    |                                |
+| um2netcdf                                 | 3.2.0                 | GNU                    |                                |
 
 **Never purge your environment - many modules are required in one version or another!**
 

@@ -61,12 +61,66 @@ module spider python
 ```
 (Will be supported with lmod).
 
-Scientific software packages that have been migrated or installed so far include:
+### Available software on Kupe
 
-* Anaconda Python
-* SpecFEM
-* Data processing and visualisation: NCL, NCO, CDO, NCView, um2netcdf, IRIS, xconv, gnuplot
-* Libraries: ESMF, XIOS, GDAL, GEOS, PROJ, HDF-EOS
+Software on Kupe is made available for XC50 nodes and CS500 nodes separately, as different operating systems are used in the two cases (SLES on the XC50 nodes, CentOS on the CS500 nodes). Running
+```
+module avail
+```
+will only present you with software that is available on the same system.
+
+Software is generally installed and maintained by the following provideres:
+
+* Cray: Compilers, some scientific libraries, and developer tools
+* NeSI: General scientific software
+* NIWA: Scientific software for weather and climate applications
+
+**Note that only the Cray software stack and a preliminary version of the NIWA software stacks are currently available and will be loaded by default! The full NeSI and NIWA software stacks will be made available soon.**
+
+#### XC50
+
+Scientific software and tools that are currently available on the XC50 include:
+
+| Module Name                               | Version(s)            | Built with compiler(s) | Notes                          |
+|-------------------------------------------|-----------------------|:----------------------:|:------------------------------:|
+| Anaconda2                                 | 4.2.0                 | ---                    |                                |
+| CDO                                       | 1.9.0                 | GNU                    |                                | 
+| cray-fftw                                 | 3.3.6.2               | Intel, Cray, GNU       | Provided by Cray               |
+| cray-hdf5                                 | 1.10.1.1              | Intel, Cray, GNU       | Provided by Cray               |
+| cray-hdf5-parallel                        | 1.10.1.1              | Intel, Cray, GNU       | Provided by Cray               |
+| cray-libsci                               | 17.09.1               | Intel, Cray, GNU       | Provided by Cray               |
+| cray-python                               | 17.09.1               | Intel, Cray, GNU       | Provided by Cray               |
+| cray-netcdf                               | 4.4.1.1.6             | Intel, Cray, GNU       | Provided by Cray               |
+| cray-netcdf-hdf5parallel                  | 4.4.1.1.6             | Intel, Cray, GNU       | Provided by Cray               |
+| cray-petsc                                | 3.7.6.0               | Intel, Cray, GNU       | Provided by Cray               |
+| cray-petsc-complex                        | 3.7.6.0               | Intel, Cray, GNU       | Provided by Cray               |
+| cray-R                                    | 3.3.3                 | Intel, Cray, GNU       | Provided by Cray               |
+| cray-trilinos                             | 12.10.1.1             | Intel, Cray, GNU       | Provided by Cray               |
+| Cylc                                      | 7.5.0                 | ---                    |                                |
+| ESMF                                      | 7.0.1                 | Intel, GNU             |                                |
+| FCM                                       | 2017.10.0             | ---                    |                                |
+| GDAL                                      | 2.2.1                 | GNU                    |                                |
+| GEOS                                      | 3.6.2                 | GNU                    |                                |
+| GRADS                                     | 2.2.0                 | GNU                    |                                |
+| grib_api                                  | 1.23.1                | Intel, Cray            |                                |
+| GSL                                       | 2.4                   | GNU                    |                                |
+| HDF                                       | 4.2.13                | GNU                    |                                |
+| HDF-EOS                                   | 2.19v1.00             | GNU                    |                                |
+| HDF-EOS5                                  | 5.1.15                | GNU                    |                                |
+| ImageMagick                               | 7.0.7.-9              | GNU                    |                                |
+| mjpegtools                                | 2.1.0                 | GNU                    |                                |
+| NCL                                       | 6.4.0                 | GNU                    |                                |
+| NCO                                       | 4.6.8                 | GNU                    |                                |
+| NCVIEW                                    | 2.1.8                 | GNU                    |                                |
+| pfunit                                    | 3.2.8                 | Intel                  |                                |
+| PROJ                                      | 4.9.3                 | GNU                    |                                |
+| Rose                                      | 2017.10.0             | ---                    |                                |
+| SCons                                     | 3.0.0                 | ---                    |                                |
+| splat                                     | 1.0.3                 | ---                    |                                |
+| UDUNITS                                   | 1.12.11, 2.2.25       | GNU                    |                                |
+| um2netcdf                                 | 3.2.0                 | GNU                    |                                |
+| XCONV                                     | 1.93                  | ---                    |                                |
+| XIOS-NC4PAR                               | r1242                 | Intel                  | Supports HDF5-parallel netCDF4 |
 
 **Never purge your environment - many modules are required in one version or another!**
 

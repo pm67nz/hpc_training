@@ -85,6 +85,7 @@ Scientific software and tools that are currently available on the XC50 include:
 |-------------------------------------------|-----------------------|:----------------------:|:------------------------------:|
 | Anaconda2                                 | 4.2.0                 | ---                    |                                |
 | CDO                                       | 1.9.0                 | GNU                    |                                | 
+| Charm++                                   | 6.8.0                 | Intel, GNU             |                                |
 | cray-fftw                                 | 3.3.6.2               | Intel, Cray, GNU       | Provided by Cray               |
 | cray-hdf5                                 | 1.10.1.1              | Intel, Cray, GNU       | Provided by Cray               |
 | cray-hdf5-parallel                        | 1.10.1.1              | Intel, Cray, GNU       | Provided by Cray               |
@@ -109,13 +110,18 @@ Scientific software and tools that are currently available on the XC50 include:
 | HDF-EOS5                                  | 5.1.15                | GNU                    |                                |
 | ImageMagick                               | 7.0.7-9               | GNU                    |                                |
 | mjpegtools                                | 2.1.0                 | GNU                    |                                |
+| mpi4py                                    | 2.0.0                 | GNU                    |                                |
+| NAMD                                      | 2.12                  | Intel, GNU             |                                |
 | NCL                                       | 6.4.0                 | GNU                    |                                |
 | NCO                                       | 4.6.8                 | GNU                    |                                |
 | NCVIEW                                    | 2.1.8                 | GNU                    |                                |
 | pfunit                                    | 3.2.8                 | Intel                  |                                |
 | PROJ                                      | 4.9.3                 | GNU                    |                                |
+| PSyclone                                  | 1.5.0                 | GNU                    |                                |
+| RegCM                                     | 4.4.5.5               | Intel, Cray, GNU       |                                |
 | Rose                                      | 2017.10.0             | ---                    |                                |
 | SCons                                     | 3.0.0                 | ---                    |                                |
+| SPECFEM3D                                 | 20171123              | Intel, GNU             |                                |
 | splat                                     | 1.0.3                 | ---                    |                                |
 | UDUNITS                                   | 1.12.11, 2.2.25       | GNU                    |                                |
 | um2netcdf                                 | 3.2.0                 | GNU                    |                                |

@@ -40,6 +40,10 @@ If you use MobaXterm or Putty, start a new ssh session with remote host `lander.
 
 You should now see the reply from Kupe's lander node.
 
+#### Shells
+
+Your login shell is ```bash```. Other shells (```ksh```, ```tcsh``` and ```csh```) are also installed and can be invoked.
+
 #### Logging in to the login node
 
 1. Connect using `ssh` either from your session on the lander node, or from a terminal program on your local machine if you are inside the NIWA network:

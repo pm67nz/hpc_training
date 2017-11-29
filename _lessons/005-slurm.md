@@ -1,13 +1,13 @@
 ---
 layout: post
-title: HPC3 Slurm job scheduler
+title: Kupe Slurm job scheduler
 ---
 
-You will learn how to submit jobs using the SLURM scheduler. 
+You will learn how to submit jobs using the Slurm scheduler. 
 
-## What is SLURM?
+## What is Slurm?
 
-SLURM is a software used on the NeSI supercomputers for scheduling and managing job submission requests. A job is a script that tells the scheduler how much resources you will require to perform a given computational work. SLURM will then try to accommodate your request while maximising overall user experience.
+Slurm is a software used on the NeSI supercomputers for scheduling and managing job submission requests. A job is a script that tells the scheduler how much resources you will require to perform a given computational work. Slurm will then try to accommodate your request while maximising overall user experience.
 
 SLURM was an acronym for Simple Linux Utility for Resource Management
 
@@ -15,35 +15,25 @@ Additional information can be found at: https://support.nesi.org.nz/hc/en-gb/art
 
 Adapted from Jordi Blasco's [Introduction to SLURM documentation](https://wiki.auckland.ac.nz/download/attachments/63145549/introduction-slurm.pdf?api=v2)
 
-## Features of SLURM
-
-- Full control over CPU and memory usage
-- Job array support
-- Integration with MPI
-- Supports interactive sessions
-- Debugger friendly
-- Environment privacy
-- Job profiling
-
 ## Getting started
 
-To use the SLURM scheduler on Kupe, you will first need to load the `SLURM` module:
+To use the Slurm scheduler on Kupe, you will first need to load the `SLURM` module:
 ```
 module load slurm
 ```
-You could add this line to your `.profile` if you don't want to load the module on every login.
+You could add this line to your `.profile` if you don't want to load the module on every login, though we do plan to remove the need to do this step at all.
 
 ## Submitting a job
 
-SLURM works like any other scheduler - you can submit jobs to a queue, and SLURM will run them for you when the resources that you requested become available. Jobs are usually defined using a job script, although you can also submit jobs without a script, directly from the command line:
+Slurm works like any other scheduler - you can submit jobs to a queue, and Slurm will run them for you when the resources that you requested become available. Jobs are usually defined using a job script, although you can also submit jobs without a script, directly from the command line:
 
 ```
 sbatch -A <project_code> -t 10 --wrap "echo hello world"
 sbatch --account <project_code> --time 10 --wrap "echo hello world"
 ```
-These two variants of the command are equivalent - SLURM offers short and long versions of many options (although there is no short form of `--warp`. The option `-t` or `--time` sets a limit on the total run time of the job allocation. Note that each partition on which the jobs are run has its own time limit. If the set time limit exceeds the limit for the partition, the job will become "PENDING" (for more information on job statuses, see below). The `--wrap` option means that the following string (in "") will be turned into a simple shell script by SLURM.
+These two variants of the command are equivalent - Slurm offers short and long versions of many options (although there is no short form of `--warp`. The option `-t` or `--time` sets a limit on the total run time of the job allocation. Note that each partition on which the jobs are run has its own time limit. If the set time limit exceeds the limit for the partition, the job will become "PENDING" (for more information on job statuses, see below). The `--wrap` option means that the following string (in "") will be turned into a simple shell script by Slurm.
 
-You should now find an output file named `slurm-<job ID>.out` that contains stdout captured by SLURM, so it should have the phrase `hello world` in it.
+You should now find an output file named `slurm-<job ID>.out` that contains stdout captured by Slurm, so it should have the phrase `hello world` in it.
 
 Here is another simple example. Build the Fortran MPI program in the `code/Fortran` directory first, if you haven't done so already:
 ```
@@ -70,7 +60,7 @@ The job will be run on a single node and with 4 MPI tasks. Each MPI task will ru
 ```
 Each task may use up to 1GB of memory, otherwise it will be cancelled.
 
-**Important note:** Unlike LoadLeveler, SLURM expects directives to come first in a submission script - don't insert any commands above the directives block.
+**Important note:** Unlike LoadLeveler, Slurm expects directives to come first in a submission script - don't insert any commands above the directives block.
 
 The program is then launched using the `srun` command:
 ```
@@ -126,7 +116,7 @@ To cancel a job, use
 scancel <job id>
 ```
 
-Another useful SLURM command is `sacct` which retrieves information about completed jobs. For example:
+Another useful Slurm command is `sacct` which retrieves information about completed jobs. For example:
 
 ```
 sacct -j 61568970
@@ -143,21 +133,19 @@ Will show us something like:
 
 The "MaxRSS" column reports the memory used during the job and is useful when trying to determine a sensible amount of memory to request in the submission script.
 
-### List of SLURM Commands
+### List of Slurm Commands
 
-Here is a list of commonly used SLURM commands:
+Here is a list of commonly used Slurm commands:
 
 - *sbatch* - submits a script job
 - *scancel* - cancels a running or pending job
 - *srun* - runs a command across nodes
-- sbcast Transfer file to a compute nodes allocated job
-- interactive - opens an interactive job session
-- sattach - connect stdin/out/err for an existing job or job step
-- squeue - displays the job queue
+- *squeue* - lists the job queue (ie: Pending) and running jobs.
+- *sacct* - lists job accounting information for running and completed jobs.
 
 ### Commonly used SLURM environment variables
 
-These environment variables can be used in SLURM submission scripts:
+These environment variables can be used in Slurm submission scripts:
 
 - $SLURM_JOBID (job id)
 - $SLURM_JOB_NODELIST (nodes allocated for job)
@@ -168,7 +156,7 @@ These environment variables can be used in SLURM submission scripts:
 
 ### More job examples
 
-Here are a few more examples for submitting jobs with SLURM.
+Here are a few more examples for submitting jobs with Slurm.
 
 #### run_simple.sl
 
@@ -180,7 +168,7 @@ sbatch -A <project_code> run_simple.sl
 
 #### run_print-args.sl
 
-This script demonstrates how to pass command line arguments from the SLURM job down to an R script. Find the output in the slurm output file.
+This script demonstrates how to pass command line arguments from the Slurm job down to an R script. Find the output in the slurm output file.
 
 ```
 sbatch -A <project_code> run_print-args.sl first second third

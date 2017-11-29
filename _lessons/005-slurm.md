@@ -78,6 +78,16 @@ srun ../Fortran/simpleMpi
 ```
 This command will create the MPI runtime environment need to run the parallel program.
 
+**Important note:** For OpenMP jobs you will need to set --cpus-per-task to a value larger than 1 and explicitly set the
+OMP_NUM_THREADS variable. By default the layout of threads will be two per physical core, meaning hyperthreading is enabled. To turn hyperthreading off you can use --hint=nomultithread. For example:
+```
+#SBATCH --nodes=1
+#SBATCH --cpus-per-threads=8
+#SBATCH --hint=nomultithread
+export OMP_NUM_THREADS=8
+srun <my_app>
+```
+
 Submit the job using
 ```
 sbatch run_simplempif90.sl
